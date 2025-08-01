@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WCW Interactive Booking Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827;
+        }
+        .show-btn {
+            transition: all 0.2s ease-in-out;
+        }
+        .show-btn.active {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(250, 204, 21, 0.4);
+        }
+        .content-box {
+            transition: all 0.3s ease-in-out;
+            min-height: 200px;
+        }
+        #faction-pie-chart-container {
+            position: relative;
+            height: 300px;
+            width: 100%;
+        }
+        .table-fixed { table-layout: fixed; }
+    </style>
+</head>
+<body class="text-gray-300">
+    <div id="app" class="container mx-auto p-4 md:p-8">
+        <header class="text-center mb-8">
+            <h1 class="text-4xl md:text-5xl font-bold text-yellow-400 tracking-tight">WCW Interactive Booking Dashboard</h1>
+            <p class="text-xl text-gray-400 mt-2">January - December 2000</p>
+        </header>
+
+        <div class="bg-gray-800 rounded-lg p-4 mb-8">
+            <h2 class="text-xl font-bold text-white mb-4 text-center">Event Timeline</h2>
+            <div id="timeline-container" class="flex flex-wrap justify-center gap-2"></div>
+        </div>
+
+        <div id="show-details-box" class="content-box bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-lg shadow-xl overflow-hidden mb-8">
+            <div id="show-details-content"></div>
+        </div>
+
+        <main id="dashboard-content" class="grid grid-cols-1 gap-6">
+            <!-- Content boxes remain unchanged -->
+        </main>
+    </div>
+
+    <!-- FULL FUNCTIONALITY RESTORED -->
+    <script src="./booking-dashboard.js"></script>
+</body>
+</html>
