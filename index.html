@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,14 +10,14 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #111827;
+            background-color: #111827; /* bg-gray-900 */
         }
         .show-btn {
             transition: all 0.2s ease-in-out;
         }
         .show-btn.active {
             transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(250, 204, 21, 0.4);
+            box-shadow: 0 4px 10px rgba(250, 204, 21, 0.4); /* yellow-400 */
         }
         .content-box {
             transition: all 0.3s ease-in-out;
@@ -33,6 +32,7 @@
     </style>
 </head>
 <body class="text-gray-300">
+
     <div id="app" class="container mx-auto p-4 md:p-8">
         <header class="text-center mb-8">
             <h1 class="text-4xl md:text-5xl font-bold text-yellow-400 tracking-tight">WCW Interactive Booking Dashboard</h1>
@@ -41,19 +41,723 @@
 
         <div class="bg-gray-800 rounded-lg p-4 mb-8">
             <h2 class="text-xl font-bold text-white mb-4 text-center">Event Timeline</h2>
-            <div id="timeline-container" class="flex flex-wrap justify-center gap-2"></div>
+            <div id="timeline-container" class="flex flex-wrap justify-center gap-2">
+                </div>
         </div>
-
+        
         <div id="show-details-box" class="content-box bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-lg shadow-xl overflow-hidden mb-8">
-            <div id="show-details-content"></div>
+             <div id="show-details-content">
+                 </div>
         </div>
 
         <main id="dashboard-content" class="grid grid-cols-1 gap-6">
-            <!-- Content boxes remain unchanged -->
+             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div id="key-events-box" class="content-box bg-gray-800 rounded-lg shadow-lg p-6">
+                    <h2 class="text-2xl font-bold text-white mb-4 border-b-2 border-yellow-400 pb-2">Key Events From This Show</h2>
+                    <ul id="key-events-list" class="space-y-3 list-disc list-inside text-gray-300"></ul>
+                </div>
+                 <div id="rankings-box" class="content-box bg-gray-800 rounded-lg shadow-lg p-6">
+                    <h2 class="text-2xl font-bold text-white mb-4 border-b-2 border-yellow-400 pb-2">Top 10 Power Rankings</h2>
+                    <ol id="rankings-list" class="space-y-2"></ol>
+                </div>
+            </div>
+            
+             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div id="champions-box" class="content-box bg-gray-800 rounded-lg shadow-lg p-6">
+                    <h2 class="text-2xl font-bold text-white mb-4 border-b-2 border-yellow-400 pb-2">Champions</h2>
+                    <div id="champions-list" class="grid grid-cols-1 xl:grid-cols-2 gap-4"></div>
+                </div>
+                <div id="roster-box" class="content-box bg-gray-800 rounded-lg shadow-lg p-6">
+                    <h2 class="text-2xl font-bold text-white mb-4 border-b-2 border-yellow-400 pb-2">Active Roster</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <h3 id="babyface-title" class="text-xl font-bold text-blue-400 mb-2">Babyfaces</h3>
+                            <div id="roster-babyfaces" class="flex flex-wrap gap-2"></div>
+                        </div>
+                        <div>
+                            <h3 id="heel-title" class="text-xl font-bold text-red-400 mb-2">Heels</h3>
+                            <div id="roster-heels" class="flex flex-wrap gap-2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div id="faction-power-box" class="content-box bg-gray-800 rounded-lg shadow-lg p-6">
+                    <h2 class="text-2xl font-bold text-white mb-4 border-b-2 border-yellow-400 pb-2">Faction Power</h2>
+                    <div id="faction-pie-chart-container">
+                        <canvas id="factionPieChart"></canvas>
+                    </div>
+                </div>
+                <div id="stables-box" class="content-box bg-gray-800 rounded-lg shadow-lg p-6">
+                    <h2 class="text-2xl font-bold text-white mb-4 border-b-2 border-yellow-400 pb-2">Stables & Factions</h2>
+                    <div id="stables-list" class="space-y-4"></div>
+                </div>
+            </div>
+
+             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div id="tag-teams-box" class="content-box bg-gray-800 rounded-lg shadow-lg p-6">
+                    <h2 class="text-2xl font-bold text-white mb-4 border-b-2 border-yellow-400 pb-2">Tag Teams</h2>
+                    <div id="tag-teams-list" class="space-y-4"></div>
+                </div>
+                <div id="developmental-box" class="content-box bg-gray-800 rounded-lg shadow-lg p-6">
+                    <h2 class="text-2xl font-bold text-white mb-4 border-b-2 border-yellow-400 pb-2">Power Plant Pro Wrestling</h2>
+                    <div id="developmental-list" class="flex flex-wrap gap-1"></div>
+                </div>
+            </div>
         </main>
     </div>
 
-    <!-- FULL FUNCTIONALITY RESTORED -->
-    <script src="https://tartanarmy1991.github.io/wcw-booking-dashboard/booking-dashboard.js"></script>
+    <script>
+        const bookingData = {
+            showOrder: [
+                'nitro1', 'thunder1', 'saturday1', 'nitro2', 'thunder2', 'saturday2', 'souledout',
+                'nitro3', 'thunder3', 'saturday3', 'nitro4', 'thunder4', 'saturday4', 'superbrawl',
+                'nitro5', 'thunder5', 'saturday5', 'nitro6', 'thunder6', 'saturday6', 'nitro7', 'thunder7', 'saturday7', 'uncensored',
+                'nitro8', 'thunder8', 'saturday8', 'nitro9', 'thunder9', 'saturday9', 'nitro10', 'nitro11', 
+                'springstampede',
+                'nitro12', 'thunder12', 'saturday12', 'nitro13', 'thunder13', 'saturday13', 'nitro14', 'thunder14', 'saturday14', 'slamboree',
+                'nitro15', 'thunder15', 'saturday15', 'nitro16', 'thunder16', 'saturday16', 'nitro17', 'thunder17', 'saturday17', 'nitro18', 'thunder18', 'saturday18', 'greatamericanbash',
+                'nitro19', 'thunder19', 'saturday19', 'nitro20', 'thunder20', 'saturday20', 'nitro21', 'thunder21', 'saturday21', 'nitro22', 'thunder22', 'saturday22', 'bashatthebeach',
+                'nitro23', 'thunder23', 'saturday23', 'nitro24', 'thunder24', 'saturday24', 'nitro25', 'thunder25', 'saturday25', 'nitro26', 'thunder26', 'saturday26', 'newbloodrising',
+                'nitro27', 'thunder27', 'saturday27', 'nitro28', 'thunder28', 'saturday28', 'nitro29', 'thunder29', 'saturday29', 'nitro30', 'thunder30', 'saturday30', 'fallbrawl',
+                'nitro31', 'thunder31', 'saturday31', 'nitro32', 'thunder32', 'saturday32', 'nitro33', 'thunder33', 'saturday33', 'nitro34', 'thunder34', 'saturday34', 'nitro35', 'thunder35', 'saturday35', 'halloweenhavoc',
+                'nitro36', 'thunder36', 'saturday36', 'nitro37', 'thunder37', 'saturday37', 'nitro38', 'thunder38', 'saturday38', 'millenniumfinal',
+                'nitro39', 'thunder39', 'saturday39', 'mayhem',
+                'nitro40', 'thunder40', 'saturday40', 'nitro41', 'thunder41', 'saturday41', 'nitro42', 'thunder42', 'saturday42', 'starrcade'
+            ],
+            initialState: { 
+                factionPowerTimeline: {
+                    'nitro1': [40, 25, 20, 15], 
+                    'souledout': [55, 15, 15, 15],
+                    'nitro3': [50, 15, 20, 15], 
+                    'superbrawl': [65, 15, 10, 10],
+                    'uncensored': [70, 15, 10, 5],
+                },
+                stables: {
+                    'nWo 2000': ['Bret Hart', 'Jeff Jarrett', 'Kevin Nash', 'Scott Hall', 'Scott Steiner'], 
+                    'The Revolution': ['Ric Flair', 'Chris Benoit', 'Eddie Guerrero', 'Dean Malenko', 'Perry Saturn', 'Shane Douglas'], 
+                    'Team WCW': ['Hulk Hogan', 'Goldberg', 'Sting', 'Diamond Dallas Page', 'Sid Vicious', 'Booker T'], 
+                    'The Filthy Animalz': ['Konnan', 'Rey Mysterio Jr.', 'Billy Kidman']
+                }, 
+                tagTeams: [
+                    { name: 'The Outsiders', members: ['Scott Hall', 'Kevin Nash'], realLifeReigns: ['6x WCW World Tag Team Champions'] },
+                    { name: 'The Revolution', members: ['Dean Malenko', 'Perry Saturn'], realLifeReigns: ['No prior reigns as a team in WCW'] },
+                    { name: 'The Filthy Animalz', members: ['Konnan', 'Billy Kidman'], realLifeReigns: ['2x WCW World Tag Team Champions (Kidman & Mysterio)', '1x WCW World Tag Team Champions (Konnan & Mysterio)'] },
+                    { name: 'Harlem Heat 2000', members: ['Stevie Ray', 'Big T'], realLifeReigns: ['No reigns together. Stevie Ray is a 10x Champion with Booker T.'] }
+                ],
+                roster: {
+                    heels: ['Bam Bam Bigelow', 'Bret Hart', 'Chris Kanyon', 'Disco Inferno', 'Jeff Jarrett', 'Kevin Nash', 'Lex Luger', 'Meng', 'Rick Steiner', 'Scott Hall', 'Scott Steiner', 'The Barbarian', 'The Cat', 'Stevie Ray', 'Shane Douglas'],
+                    babyfaces: ['Booker T', 'Buff Bagwell', 'Chavo Guerrero Jr.', 'Curt Hennig', 'Diamond Dallas Page', 'Dustin Rhodes', 'Goldberg', 'Hulk Hogan', 'Juventud Guerrera', 'Konnan', 'La Parka', 'Psicosis', 'Rey Mysterio Jr.', 'Ric Flair', 'Sid Vicious', 'Sting', 'Vampiro', 'Billy Kidman', 'Chris Benoit', 'Eddie Guerrero', 'Dean Malenko', 'Perry Saturn']
+                },
+                developmental: [ 'Adam Pearce', 'AJ Styles', 'Alexis Laree', 'Amazing Red', 'Berlyn', 'Big T', 'Big Vito', 'Bobby Eaton', 'Brian Adams', 'Brian Kendrick', 'Bryan Clark', 'Buzzkill', 'Carly Colon', 'Chris Parks', 'Corporal Cajun', 'Crowbar', 'Daffney', 'Dave Prazak', 'David Flair', 'El Dandy', 'Elix Skipper', 'Elizabeth', 'Evan Karagias', 'Fit Finlay', 'Frankie Kazarian', 'Gerald', 'Horace Hogan', 'Hugh Morrus', 'Jamie-San', 'Jeremy Borash', 'John Cena', 'Johnny The Bull', 'Jungle Jim', 'Kaz Hayashi', 'Kid Romeo', 'Kimberly Page', 'Kwee Wee', 'Lenny Lane', 'Lord Steven Regal', 'Madusa', 'Mark Jindrak', 'Midnight', 'Mike Sanders', 'Miss Hancock', 'Mona', 'Monster Ripper', 'Norman Smiley', 'Paisley', 'Patrick', 'Reno', 'Samoa Joe', 'Scott Armstrong', 'Scott Hudson', 'Sgt. Buddy Lee Parke', 'Shane Helms', 'Shannon Moore', 'Silver King', 'Sonny Siaki', 'Spice', 'Steve Armstrong', 'The Demon', 'The Maestro', 'The Wall', 'Torrie Wilson', 'Villano IV', 'Villano V', 'Yun Yang' ],
+                champions: {
+                    world: { name: 'Bret Hart', since: '1999-12-20', belt: 'https://i.ibb.co/cSMhK556/wcw-world-heavyweight-championship.png'},
+                    us: { name: 'Jeff Jarrett', since: '1999-12-20', belt: 'https://i.ibb.co/zVT1C52p/images-wrestling-titles-wcw-wcw-united-states-championship-95-01.webp'},
+                    tag: { name: 'Vacant', since: '2000-01-03', belt: 'https://i.ibb.co/8gyzFy9Q/images-wrestling-titles-wcw-wcw-tag-team-championship.webp', members: []},
+                    cruiserweight: { name: 'Vacant', since: '2000-01-03', belt: 'https://i.ibb.co/0ycmdx9M/wcw-world-cruiserweight-championship.png'}
+                }
+            },
+            shows: {
+                nitro1: { name: "Nitro Wk 1", showName: "A New Era Begins", logo: "https://i.ibb.co/zWWtgrH1/WCW-Nitro-2000.jpg", date: "2000-01-03", type: 'tv', segments: [] },
+                thunder1: { name: "Thunder Wk 1", showName: "The Fallout", logo: "https://i.ibb.co/3y97c5CD/WCW-Thunder-2000.jpg", date: "2000-01-06", type: 'tv', segments: [] },
+                saturday1: { name: "Saturday Wk 1", showName: "A Chance to Shine", logo: "https://i.ibb.co/x8jPBr60/WCW-Saturday-2000.jpg", date: "2000-01-08", type: 'tv', segments: [] },
+                nitro2: { name: "Nitro Wk 2", showName: "Defining Excellence", logo: "https://i.ibb.co/zWWtgrH1/WCW-Nitro-2000.jpg", date: "2000-01-10", type: 'tv', segments: [] },
+                thunder2: { name: "Thunder Wk 2", showName: "The Final Countdown", logo: "https://i.ibb.co/3y97c5CD/WCW-Thunder-2000.jpg", date: "2000-01-13", type: 'tv', segments: [] },
+                saturday2: { name: "Saturday Wk 2", showName: "The Go-Home Show", logo: "https://i.ibb.co/x8jPBr60/WCW-Saturday-2000.jpg", date: "2000-01-15", type: 'tv', segments: [] },
+                souledout: { name: "Souled Out", showName: "A New Century of Conflict", logo: "https://i.ibb.co/PZStp2SD/Whisk-f3a65cde3b.jpg", date: "2000-01-16", type: 'ppv', segments: [] },
+                nitro3: { name: "Nitro Wk 3", showName: "Fallout", logo: "https://i.ibb.co/zWWtgrH1/WCW-Nitro-2000.jpg", date: "2000-01-17", type: 'tv', segments: [] },
+                thunder3: { name: "Thunder Wk 3", showName: "Collision Course", logo: "https://i.ibb.co/3y97c5CD/WCW-Thunder-2000.jpg", date: "2000-01-20", type: 'tv', segments: [] },
+                saturday3: { name: "Saturday Wk 3", showName: "Proving Ground", logo: "https://i.ibb.co/x8jPBr60/WCW-Saturday-2000.jpg", date: "2000-01-22", type: 'tv', segments: [] },
+                nitro4: { name: "Nitro Wk 4", showName: "The Triple Threat", logo: "https://i.ibb.co/zWWtgrH1/WCW-Nitro-2000.jpg", date: "2000-01-24", type: 'tv', segments: [] },
+                thunder4: { name: "Thunder Wk 4", showName: "Path of Destruction", logo: "https://i.ibb.co/3y97c5CD/WCW-Thunder-2000.jpg", date: "2000-01-27", type: 'tv', segments: [] },
+                saturday4: { name: "Saturday Wk 4", showName: "SuperBrawl Countdown", logo: "https://i.ibb.co/x8jPBr60/WCW-Saturday-2000.jpg", date: "2000-01-29", type: 'tv', segments: [] },
+                superbrawl: { name: "SuperBrawl", showName: "The War Escalates", logo: "https://i.ibb.co/2Z5Yg1Q/Super-Brawl-2000.jpg", date: "2000-02-20", type: 'ppv', segments: [] },
+                nitro5: { name: "Nitro Wk 5", showName: "The New World Order of Wrestling", logo: "https://i.ibb.co/zWWtgrH1/WCW-Nitro-2000.jpg", date: "2000-02-28", type: 'tv', segments: [] },
+                thunder5: { name: "Thunder Wk 5", showName: "Drawing the Line", logo: "https://i.ibb.co/3y97c5CD/WCW-Thunder-2000.jpg", date: "2000-03-02", type: 'tv', segments: [] },
+                saturday5: { name: "Saturday Wk 5", showName: "On the Brink", logo: "https://i.ibb.co/x8jPBr60/WCW-Saturday-2000.jpg", date: "2000-03-04", type: 'tv', segments: [] },
+                nitro6: { name: "Nitro Wk 6", date: "2000-03-06", type: 'tv', segments: [] },
+                thunder6: { name: "Thunder Wk 6", date: "2000-03-09", type: 'tv', segments: [] },
+                saturday6: { name: "Saturday Wk 6", date: "2000-03-11", type: 'tv', segments: [] },
+                nitro7: { name: "Nitro Wk 7", date: "2000-03-13", type: 'tv', segments: [] },
+                thunder7: { name: "Thunder Wk 7", date: "2000-03-16", type: 'tv', segments: [] },
+                saturday7: { name: "Saturday Wk 7", date: "2000-03-18", type: 'tv', segments: [] },
+                uncensored: { name: "Uncensored", date: "2000-03-19", type: 'ppv', segments: [] },
+                nitro8: { name: "Nitro Wk 8", date: "2000-03-20", type: 'tv', segments: [] },
+                thunder8: { name: "Thunder Wk 8", date: "2000-03-23", type: 'tv', segments: [] },
+                saturday8: { name: "Saturday Wk 8", date: "2000-03-25", type: 'tv', segments: [] },
+                nitro9: { name: "Nitro Wk 9", date: "2000-03-27", type: 'tv', segments: [] },
+                thunder9: { name: "Thunder Wk 9", date: "2000-03-30", type: 'tv', segments: [] },
+                saturday9: { name: "Saturday Wk 9", date: "2000-04-01", type: 'tv', segments: [] },
+                nitro10: { name: "Nitro Wk 10", date: "2000-04-03", type: 'tv', segments: [] },
+                nitro11: { name: "Nitro Wk 11", date: "2000-04-10", type: 'tv', segments: [] },
+                springstampede: { name: "Spring Stampede", date: "2000-04-16", type: 'ppv', segments: [] },
+                nitro12: { name: "Nitro Wk 12", date: "2000-04-17", type: 'tv', segments: [] },
+                thunder12: { name: "Thunder Wk 12", date: "2000-04-20", type: 'tv', segments: [] },
+                saturday12: { name: "Saturday Wk 12", date: "2000-04-22", type: 'tv', segments: [] },
+                nitro13: { name: "Nitro Wk 13", date: "2000-04-24", type: 'tv', segments: [] },
+                thunder13: { name: "Thunder Wk 13", date: "2000-04-27", type: 'tv', segments: [] },
+                saturday13: { name: "Saturday Wk 13", date: "2000-04-29", type: 'tv', segments: [] },
+                nitro14: { name: "Nitro Wk 14", date: "2000-05-01", type: 'tv', segments: [] },
+                thunder14: { name: "Thunder Wk 14", date: "2000-05-04", type: 'tv', segments: [] },
+                saturday14: { name: "Saturday Wk 14", date: "2000-05-06", type: 'tv', segments: [] },
+                slamboree: { name: "Slamboree", date: "2000-05-07", type: 'ppv', segments: [] },
+                nitro15: { name: "Nitro Wk 15", date: "2000-05-08", type: 'tv', segments: [] },
+                thunder15: { name: "Thunder Wk 15", date: "2000-05-11", type: 'tv', segments: [] },
+                saturday15: { name: "Saturday Wk 15", date: "2000-05-13", type: 'tv', segments: [] },
+                nitro16: { name: "Nitro Wk 16", date: "2000-05-15", type: 'tv', segments: [] },
+                thunder16: { name: "Thunder Wk 16", date: "2000-05-18", type: 'tv', segments: [] },
+                saturday16: { name: "Saturday Wk 16", date: "2000-05-20", type: 'tv', segments: [] },
+                nitro17: { name: "Nitro Wk 17", date: "2000-05-22", type: 'tv', segments: [] },
+                thunder17: { name: "Thunder Wk 17", date: "2000-05-25", type: 'tv' },
+                saturday17: { name: "Saturday Wk 17", date: "2000-05-27", type: 'tv' },
+                nitro18: { name: "Nitro Wk 18", date: "2000-05-29", type: 'tv' },
+                thunder18: { name: "Thunder Wk 18", date: "2000-06-01", type: 'tv' },
+                saturday18: { name: "Saturday Wk 18", date: "2000-06-03", type: 'tv' },
+                greatamericanbash: { name: "Great American Bash", date: "2000-06-11", type: 'ppv' },
+                nitro19: { name: "Nitro Wk 19", date: "2000-06-12", type: 'tv' },
+                thunder19: { name: "Thunder Wk 19", date: "2000-06-15", type: 'tv' },
+                saturday19: { name: "Saturday Wk 19", date: "2000-06-17", type: 'tv' },
+                nitro20: { name: "Nitro Wk 20", date: "2000-06-19", type: 'tv' },
+                thunder20: { name: "Thunder Wk 20", date: "2000-06-22", type: 'tv' },
+                saturday20: { name: "Saturday Wk 20", date: "2000-06-24", type: 'tv' },
+                nitro21: { name: "Nitro Wk 21", date: "2000-06-26", type: 'tv' },
+                thunder21: { name: "Thunder Wk 21", date: "2000-06-29", type: 'tv' },
+                saturday21: { name: "Saturday Wk 21", date: "2000-07-01", type: 'tv' },
+                nitro22: { name: "Nitro Wk 22", date: "2000-07-03", type: 'tv' },
+                thunder22: { name: "Thunder Wk 22", date: "2000-07-06", type: 'tv' },
+                saturday22: { name: "Saturday Wk 22", date: "2000-07-08", type: 'tv' },
+                bashatthebeach: { name: "Bash At The Beach", date: "2000-07-09", type: 'ppv' },
+                nitro23: { name: "Nitro Wk 23", date: "2000-07-10", type: 'tv' },
+                thunder23: { name: "Thunder Wk 23", date: "2000-07-13", type: 'tv' },
+                saturday23: { name: "Saturday Wk 23", date: "2000-07-15", type: 'tv' },
+                nitro24: { name: "Nitro Wk 24", date: "2000-07-17", type: 'tv' },
+                thunder24: { name: "Thunder Wk 24", date: "2000-07-20", type: 'tv' },
+                saturday24: { name: "Saturday Wk 24", date: "2000-07-22", type: 'tv' },
+                nitro25: { name: "Nitro Wk 25", date: "2000-07-24", type: 'tv' },
+                thunder25: { name: "Thunder Wk 25", date: "2000-07-27", type: 'tv' },
+                saturday25: { name: "Saturday Wk 25", date: "2000-07-29", type: 'tv' },
+                nitro26: { name: "Nitro Wk 26", date: "2000-07-31", type: 'tv' },
+                thunder26: { name: "Thunder Wk 26", date: "2000-08-03", type: 'tv' },
+                saturday26: { name: "Saturday Wk 26", date: "2000-08-05", type: 'tv' },
+                nitro27: { name: "Nitro Wk 27", date: "2000-08-07", type: 'tv' },
+                thunder27: { name: "Thunder Wk 27", date: "2000-08-10", type: 'tv' },
+                saturday27: { name: "Saturday Wk 27", date: "2000-08-12", type: 'tv' },
+                newbloodrising: { name: "New Blood Rising", date: "2000-08-13", type: 'ppv' },
+                nitro28: { name: "Nitro Wk 28", date: "2000-08-14", type: 'tv' },
+                thunder28: { name: "Thunder Wk 28", date: "2000-08-17", type: 'tv' },
+                saturday28: { name: "Saturday Wk 28", date: "2000-08-19", type: 'tv' },
+                nitro29: { name: "Nitro Wk 29", date: "2000-08-21", type: 'tv' },
+                thunder29: { name: "Thunder Wk 29", date: "2000-08-24", type: 'tv' },
+                saturday29: { name: "Saturday Wk 29", date: "2000-08-26", type: 'tv' },
+                nitro30: { name: "Nitro Wk 30", date: "2000-08-28", type: 'tv' },
+                thunder30: { name: "Thunder Wk 30", date: "2000-08-31", type: 'tv' },
+                saturday30: { name: "Saturday Wk 30", date: "2000-09-02", type: 'tv' },
+                fallbrawl: { name: "Fall Brawl", date: "2000-09-17", type: 'ppv' },
+                nitro31: { name: "Nitro Wk 31", date: "2000-09-18", type: 'tv' },
+                thunder31: { name: "Thunder Wk 31", date: "2000-09-21", type: 'tv' },
+                saturday31: { name: "Saturday Wk 31", date: "2000-09-23", type: 'tv' },
+                nitro32: { name: "Nitro Wk 32", date: "2000-09-25", type: 'tv' },
+                thunder32: { name: "Thunder Wk 32", date: "2000-09-28", type: 'tv' },
+                saturday32: { name: "Saturday Wk 32", date: "2000-09-30", type: 'tv' },
+                nitro33: { name: "Nitro Wk 33", date: "2000-10-02", type: 'tv' },
+                thunder33: { name: "Thunder Wk 33", date: "2000-10-05", type: 'tv' },
+                saturday33: { name: "Saturday Wk 33", date: "2000-10-07", type: 'tv' },
+                nitro34: { name: "Nitro Wk 34", date: "2000-10-09", type: 'tv' },
+                thunder34: { name: "Thunder Wk 34", date: "2000-10-12", type: 'tv' },
+                saturday34: { name: "Saturday Wk 34", date: "2000-10-14", type: 'tv' },
+                nitro35: { name: "Nitro Wk 35", date: "2000-10-16", type: 'tv' },
+                thunder35: { name: "Thunder Wk 35", date: "2000-10-19", type: 'tv' },
+                saturday35: { name: "Saturday Wk 35", date: "2000-10-21", type: 'tv' },
+                halloweenhavoc: { name: "Halloween Havoc", date: "2000-10-29", type: 'ppv' },
+                nitro36: { name: "Nitro Wk 36", date: "2000-10-30", type: 'tv' },
+                thunder36: { name: "Thunder Wk 36", date: "2000-11-02", type: 'tv' },
+                saturday36: { name: "Saturday Wk 36", date: "2000-11-04", type: 'tv' },
+                nitro37: { name: "Nitro Wk 37", date: "2000-11-06", type: 'tv' },
+                thunder37: { name: "Thunder Wk 37", date: "2000-11-09", type: 'tv' },
+                saturday37: { name: "Saturday Wk 37", date: "2000-11-11", type: 'tv' },
+                nitro38: { name: "Nitro Wk 38", date: "2000-11-13", type: 'tv' },
+                thunder38: { name: "Thunder Wk 38", date: "2000-11-15", type: 'tv' },
+                saturday38: { name: "Saturday Wk 38", date: "2000-11-18", type: 'tv' },
+                millenniumfinal: { name: "Millennium Final", date: "2000-11-16", type: 'ppv' },
+                nitro39: { name: "Nitro Wk 39", date: "2000-11-20", type: 'tv' },
+                thunder39: { name: "Thunder Wk 39", date: "2000-11-23", type: 'tv' },
+                saturday39: { name: "Saturday Wk 39", date: "2000-11-25", type: 'tv' },
+                mayhem: { name: "Mayhem", date: "2000-11-26", type: 'ppv' },
+                nitro40: { name: "Nitro Wk 40", date: "2000-11-27", type: 'tv' },
+                thunder40: { name: "Thunder Wk 40", date: "2000-11-30", type: 'tv' },
+                saturday40: { name: "Saturday Wk 40", date: "2000-12-02", type: 'tv' },
+                nitro41: { name: "Nitro Wk 41", date: "2000-12-04", type: 'tv' },
+                thunder41: { name: "Thunder Wk 41", date: "2000-12-07", type: 'tv' },
+                saturday41: { name: "Saturday Wk 41", date: "2000-12-09", type: 'tv' },
+                nitro42: { name: "Nitro Wk 42", date: "2000-12-11", type: 'tv' },
+                thunder42: { name: "Thunder Wk 42", date: "2000-12-14", type: 'tv' },
+                saturday42: { name: "Saturday Wk 42", date: "2000-12-16", type: 'tv' },
+                starrcade: { name: "Starrcade", date: "2000-12-17", type: 'ppv' }
+            }
+        };
+
+        const factionChartColors = ['#4B5563', '#FBBF24', '#2563EB', '#16A34A'];
+        const factionNames = ['nWo 2000', 'Team WCW', 'The Revolution', 'The Filthy Animalz'];
+        let factionPieChart = null;
+        let tagTeamTitleHistories = {};
+
+        document.addEventListener('DOMContentLoaded', () => {
+            precomputeTagTeamHistories();
+            const timelineContainer = document.getElementById('timeline-container');
+            let currentGroup = [];
+            bookingData.showOrder.forEach(showId => {
+                const show = bookingData.shows[showId];
+                if (!show) {
+                    console.error(`Show data not found for ID: ${showId}`);
+                    return;
+                }
+                if (show.type === 'tv') {
+                    currentGroup.push(showId);
+                } else {
+                    renderButtonGroup(currentGroup, timelineContainer);
+                    renderButton(showId, timelineContainer);
+                    currentGroup = [];
+                }
+            });
+            if (currentGroup.length > 0) renderButtonGroup(currentGroup, timelineContainer);
+            
+            const lastBookedShow = 'superbrawl'; 
+            updateDashboard(lastBookedShow);
+        });
+        
+        function precomputeTagTeamHistories() {
+            // Clear existing histories
+            tagTeamTitleHistories = {};
+            // Initialize with real life reigns
+            bookingData.initialState.tagTeams.forEach(team => {
+                const key = team.members.slice().sort().join(',');
+                tagTeamTitleHistories[key] = { 
+                    name: team.name, 
+                    members: team.members, 
+                    reigns: team.realLifeReigns ? team.realLifeReigns.map(r => ({ date: 'Pre-2000', text: r })) : [] 
+                };
+            });
+
+            // Add fantasy booked reigns
+            bookingData.showOrder.forEach(showId => {
+                const show = bookingData.shows[showId];
+                if (show && show.segments) {
+                    show.segments.forEach(segment => {
+                        if (segment.titleChange && segment.titleChange.titleKey === 'tag') {
+                            const members = segment.titleChange.newChampion;
+                            const key = members.slice().sort().join(',');
+                             if (tagTeamTitleHistories[key]) {
+                                 tagTeamTitleHistories[key].reigns.push({ date: show.date, text: 'Won WCW World Tag Team Championship'});
+                             }
+                        }
+                    });
+                }
+            });
+        }
+
+
+        function renderButtonGroup(showIds, container) {
+            if (showIds.length === 0) return;
+            const groupDiv = document.createElement('div');
+            groupDiv.className = 'flex flex-wrap justify-center items-center gap-2 border-r-2 border-gray-600 pr-4 mr-2';
+            showIds.forEach(id => renderButton(id, groupDiv));
+            container.appendChild(groupDiv);
+        }
+
+        function renderButton(showId, container) {
+            const show = bookingData.shows[showId];
+            const button = document.createElement('button');
+            button.id = `btn-${showId}`;
+            button.textContent = show.name;
+            button.className = `show-btn py-2 px-3 rounded-md text-sm font-semibold shadow-md focus:outline-none ${show.type === 'ppv' ? 'bg-red-700 hover:bg-red-600 text-white' : 'bg-gray-700 hover:bg-gray-600 text-white'}`;
+            button.onclick = () => updateDashboard(showId);
+            container.appendChild(button);
+        }
+
+        function calculateCurrentState(targetShowId) {
+            let state = JSON.parse(JSON.stringify(bookingData.initialState)); // Deep copy
+            state.keyEvents = []; // Start fresh
+            const targetShowIndex = bookingData.showOrder.indexOf(targetShowId);
+
+            // Initialize records
+            state.records = {};
+            const allWrestlers = [...state.roster.heels, ...state.roster.babyfaces];
+            allWrestlers.forEach(wrestler => {
+                state.records[wrestler] = { wins: 0, losses: 0, draws: 0 };
+            });
+
+
+            for (let i = 0; i <= targetShowIndex; i++) {
+                const currentShowId = bookingData.showOrder[i];
+                const show = bookingData.shows[currentShowId];
+                if (!show) continue;
+                const showDate = show.date;
+
+                if (show.segments) {
+                    show.segments.forEach(segment => {
+                        // Roster Changes
+                        if (segment.rosterChange) {
+                            const { wrestler, from, to, newStable, removeStable } = segment.rosterChange;
+                            if (from && to) {
+                                state.roster[from] = state.roster[from].filter(r => r !== wrestler);
+                                if (!state.roster[to].includes(wrestler)) {
+                                    state.roster[to].push(wrestler);
+                                }
+                            }
+                             if (removeStable) {
+                                 if (state.stables[removeStable]) {
+                                     state.stables[removeStable] = state.stables[removeStable].filter(m => m !== wrestler);
+                                 }
+                             }
+                             if (newStable) {
+                                 if (!state.stables[newStable]) state.stables[newStable] = [];
+                                 if (!state.stables[newStable].includes(wrestler)) {
+                                     state.stables[newStable].push(wrestler);
+                                 }
+                             }
+                        }
+                        // Title Changes
+                        if (segment.titleChange) {
+                            const { titleKey, newChampion } = segment.titleChange;
+                            state.champions[titleKey].name = Array.isArray(newChampion) ? newChampion.join(' & ') : newChampion;
+                            if (titleKey === 'tag') {
+                                state.champions[titleKey].members = newChampion;
+                            } else {
+                                state.champions[titleKey].members = [];
+                            }
+                            state.champions[titleKey].since = showDate;
+                        }
+                        // Key Events
+                        if(segment.keyEvent) {
+                            const eventExists = state.keyEvents.some(e => e.text === segment.keyEvent);
+                            if (!eventExists) {
+                                state.keyEvents.push({ show: currentShowId, text: segment.keyEvent });
+                            }
+                        }
+                        // Record Calculation
+                        if (segment.type === 'Match' && segment.result && segment.participants) {
+                            const participants = segment.participants.split(/ vs\. | & /).map(p => p.trim());
+                            let winner = null;
+                            if (segment.result.includes('by DQ') || segment.result.includes('No Contest')) {
+                                // Draws
+                                participants.forEach(p => {
+                                    if(state.records[p]) state.records[p].draws++;
+                                });
+                            } else {
+                                // Wins/Losses
+                                winner = segment.result;
+                                participants.forEach(p => {
+                                    if (state.records[p]) {
+                                        if (p === winner || (Array.isArray(winner) && winner.includes(p))) {
+                                            state.records[p].wins++;
+                                        } else {
+                                            state.records[p].losses++;
+                                        }
+                                    }
+                                });
+                            }
+                        }
+                    });
+                }
+            }
+            return state;
+        }
+
+        function updateDashboard(showId) {
+            document.querySelectorAll('.show-btn').forEach(btn => btn.classList.remove('active', 'bg-yellow-400', 'text-black'));
+            const activeBtn = document.getElementById(`btn-${showId}`);
+            if (activeBtn) {
+               activeBtn.classList.add('active', 'bg-yellow-400', 'text-black');
+            }
+            
+            const currentState = calculateCurrentState(showId);
+            const show = bookingData.shows[showId];
+            
+            updateShowDetails(show);
+            updateKeyEvents(currentState.keyEvents, showId);
+            updateChampions(currentState.champions);
+            updateRoster(currentState.roster);
+            updateStables(currentState.stables);
+            updateTagTeams();
+            updateFactionPower(showId);
+            updateDevelopmental(currentState.developmental);
+            updateRankings(currentState.records);
+        }
+
+        function updateRankings(records) {
+            const list = document.getElementById('rankings-list');
+            list.innerHTML = '';
+            
+            const rankedWrestlers = Object.entries(records)
+                .map(([name, record]) => ({ name, ...record, score: record.wins * 2 - record.losses }))
+                .sort((a, b) => b.score - a.score || b.wins - a.wins)
+                .slice(0, 10);
+
+            rankedWrestlers.forEach((wrestler, index) => {
+                const li = document.createElement('li');
+                li.className = 'flex justify-between items-center bg-gray-700/50 p-2 rounded-md';
+                li.innerHTML = `
+                    <span class="font-semibold text-white">${index + 1}. ${wrestler.name}</span>
+                    <span class="text-sm font-mono text-yellow-400">${wrestler.wins}-${wrestler.losses}-${wrestler.draws}</span>
+                `;
+                list.appendChild(li);
+            });
+        }
+
+        function updateKeyEvents(allEvents, showId) {
+            const list = document.getElementById('key-events-list');
+            list.innerHTML = '';
+
+            const eventsForShow = allEvents.filter(event => event.show === showId);
+
+            if(eventsForShow.length === 0) {
+                list.innerHTML = `<li class="text-gray-400">No key events for this show.</li>`;
+                return;
+            }
+            eventsForShow.forEach(event => {
+                const li = document.createElement('li');
+                li.innerHTML = `<span class="font-semibold text-white">${event.text}</span>`;
+                list.appendChild(li);
+            });
+        }
+        
+        function updateFactionPower(showId) {
+            const timeline = bookingData.initialState.factionPowerTimeline;
+            const showIndex = bookingData.showOrder.indexOf(showId);
+            let latestPowerKey = 'nitro1'; 
+            
+            for (let i = 0; i <= showIndex; i++) {
+                const currentShowId = bookingData.showOrder[i];
+                if (timeline[currentShowId]) {
+                    latestPowerKey = currentShowId;
+                }
+            }
+            
+            const powerValues = timeline[latestPowerKey];
+            const powerLabel = bookingData.shows[latestPowerKey].name;
+
+            const ctx = document.getElementById('factionPieChart').getContext('2d');
+            if (factionPieChart) {
+                factionPieChart.destroy();
+            }
+
+            factionPieChart = new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: factionNames,
+                    datasets: [{
+                        data: powerValues,
+                        backgroundColor: factionChartColors,
+                        borderColor: '#1f2937',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'top', labels: { color: '#d1d5db' } },
+                        title: { display: true, text: `Power Distribution (as of ${powerLabel})`, color: '#f9fafb' }
+                    }
+                }
+            });
+        }
+
+        function updateStables(stablesData) {
+            const list = document.getElementById('stables-list');
+            list.innerHTML = '';
+            for(const [name, members] of Object.entries(stablesData)) {
+                if(members.length === 0) continue;
+                const stableDiv = document.createElement('div');
+                stableDiv.className = 'bg-gray-700/50 p-3 rounded-lg';
+                stableDiv.innerHTML = `<h3 class="font-bold text-lg text-yellow-400">${name}</h3><p class="text-sm text-gray-300">${members.sort().join(', ')}</p>`;
+                list.appendChild(stableDiv);
+            }
+        }
+        
+        function updateTagTeams() {
+            const list = document.getElementById('tag-teams-list');
+            list.innerHTML = '';
+
+            for (const key in tagTeamTitleHistories) {
+                const team = tagTeamTitleHistories[key];
+                const teamDiv = document.createElement('div');
+                teamDiv.className = 'bg-gray-700/50 p-3 rounded-lg';
+
+                let historyHtml = '<p class="text-xs text-gray-400 mt-1">No title history.</p>';
+                if (team.reigns.length > 0) {
+                    historyHtml = '<ul class="list-disc list-inside text-xs text-gray-400 mt-1">';
+                    team.reigns.forEach(reign => {
+                        const reignDate = new Date(new Date(reign.date).valueOf() + new Date(reign.date).getTimezoneOffset() * 60 * 1000).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+                        const reignText = reign.date === 'Pre-2000' ? reign.text : `Won title on ${reignDate}`;
+                        historyHtml += `<li>${reignText}</li>`;
+                    });
+                    historyHtml += '</ul>';
+                }
+
+                teamDiv.innerHTML = `
+                    <h3 class="font-bold text-lg text-yellow-400">${team.name}</h3>
+                    <p class="text-sm text-gray-300">${team.members.join(' & ')}</p>
+                    <h4 class="text-md font-semibold text-white mt-2">Title History:</h4>
+                    ${historyHtml}
+                `;
+                list.appendChild(teamDiv);
+            }
+        }
+        
+        function updateRoster(rosterData) {
+            const babyfaceContainer = document.getElementById('roster-babyfaces');
+            const heelContainer = document.getElementById('roster-heels');
+            const babyfaceTitle = document.getElementById('babyface-title');
+            const heelTitle = document.getElementById('heel-title');
+            
+            babyfaceContainer.innerHTML = '';
+            heelContainer.innerHTML = '';
+
+            babyfaceTitle.innerHTML = `Babyfaces <span class="text-sm font-normal text-gray-400">(${rosterData.babyfaces.length})</span>`;
+            heelTitle.innerHTML = `Heels <span class="text-sm font-normal text-gray-400">(${rosterData.heels.length})</span>`;
+
+            rosterData.babyfaces.sort().forEach(name => {
+                const span = document.createElement('span');
+                span.className = 'bg-blue-800 text-white py-1 px-3 rounded-full text-sm font-semibold';
+                span.textContent = name;
+                babyfaceContainer.appendChild(span);
+            });
+
+            rosterData.heels.sort().forEach(name => {
+                const span = document.createElement('span');
+                span.className = 'bg-red-800 text-white py-1 px-3 rounded-full text-sm font-semibold';
+                span.textContent = name;
+                heelContainer.appendChild(span);
+            });
+        }
+
+        function updateDevelopmental(devData) {
+            const devContainer = document.getElementById('developmental-list');
+            devContainer.innerHTML = '';
+            if (devData && devData.length > 0) {
+                devData.sort().forEach(name => {
+                    const span = document.createElement('span');
+                    span.className = 'bg-gray-600 text-gray-200 py-0.5 px-2 rounded text-xs font-medium';
+                    span.textContent = name;
+                    devContainer.appendChild(span);
+                });
+            }
+        }
+
+        function updateChampions(championsData) {
+            const container = document.getElementById('champions-list');
+            container.innerHTML = '';
+            const titles = [
+                { id: 'world', title: 'World Heavyweight Champion' },
+                { id: 'us', title: 'United States Champion' },
+                { id: 'tag', title: 'World Tag Team Champions' },
+                { id: 'cruiserweight', title: 'Cruiserweight Champion' }
+            ];
+
+            titles.forEach(titleInfo => {
+                const champData = championsData[titleInfo.id];
+                const championName = Array.isArray(champData.members) && champData.members.length > 0 ? champData.members.join(' & ') : champData.name;
+                const localDate = new Date(champData.since);
+                const displayDate = new Date(localDate.valueOf() + localDate.getTimezoneOffset() * 60 * 1000).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+
+                const cardHtml = `
+                    <div class="bg-gray-700/50 rounded-lg p-4 flex items-center gap-4">
+                        <img src="${champData.belt}" alt="${titleInfo.title}" class="h-20 w-16 object-contain" onerror="this.onerror=null;this.src='https://placehold.co/64x80/1f2937/4b5563?text=BELT';">
+                        <div class="flex-grow">
+                            <h3 class="text-lg font-bold text-yellow-400">${titleInfo.title}</h3>
+                            <p class="text-white text-md font-semibold">${championName}</p>
+                            <p class="text-sm text-gray-400">Since: ${displayDate}</p>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += cardHtml;
+            });
+        }
+
+        function calculateShowLength(segments) {
+            if (!segments || segments.length === 0) return '';
+            const totalMinutes = segments.reduce((acc, segment) => {
+                const minutes = parseInt(segment.duration, 10);
+                return isNaN(minutes) ? acc : acc + minutes;
+            }, 0);
+            const hours = Math.floor(totalMinutes / 60);
+            const minutes = totalMinutes % 60;
+            return `(Runtime: ${hours}h ${minutes}m)`;
+        }
+
+        function updateShowDetails(show) {
+            const container = document.getElementById('show-details-content');
+            const showLocation = "Live from various arenas!"; 
+            const showLength = calculateShowLength(show.segments);
+            
+            const localDate = new Date(show.date);
+            const displayDate = new Date(localDate.valueOf() + localDate.getTimezoneOffset() * 60 * 1000).toLocaleDateString('en-US', {
+                year: 'numeric', month: 'long', day: 'numeric'
+            });
+
+            let segmentsHtml = '';
+            if (show.segments && show.segments.length > 0) {
+                let tableRows = '';
+                show.segments.forEach(segment => {
+                    const isMatch = segment.type === 'Match';
+                    let titleIcon = '';
+                    if (segment.titleChange) {
+                        const beltUrl = bookingData.initialState.champions[segment.titleChange.titleKey].belt;
+                        titleIcon = `<img src="${beltUrl}" class="h-8 w-auto inline-block ml-2" title="Title Match">`;
+                    } else if (segment.icon) {
+                        titleIcon = `<img src="${segment.icon}" class="h-8 w-auto inline-block ml-2" title="Title Contender Match">`;
+                    }
+
+                    tableRows += `
+                        <tr class="border-b border-gray-700 hover:bg-gray-700/50">
+                            <td class="p-3 text-sm text-gray-400 whitespace-nowrap">${segment.duration || 'N/A'}</td>
+                            <td class="p-3 whitespace-nowrap"><span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${isMatch ? 'bg-green-100 text-green-800' : 'bg-blue-100 text-blue-800'}">${segment.type}</span></td>
+                            <td class="p-3 text-sm text-white">
+                                <div class="flex items-center">
+                                    <span>${segment.title || ''}</span>
+                                    ${titleIcon}
+                                </div>
+                                <span class="text-xs text-gray-400">${segment.participants || ''}</span>
+                            </td>
+                            <td class="p-3 text-sm text-yellow-400 font-semibold">${segment.result || 'N/A'}</td>
+                            <td class="p-3 text-sm text-gray-300">${segment.logic || ''}</td>
+                        </tr>
+                    `;
+                });
+                segmentsHtml = `
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left table-fixed">
+                            <thead class="bg-gray-800">
+                                <tr>
+                                    <th class="w-[10%] px-3 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Duration</th>
+                                    <th class="w-[10%] px-3 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Type</th>
+                                    <th class="w-[25%] px-3 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Segment</th>
+                                    <th class="w-[15%] px-3 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Result</th>
+                                    <th class="w-[40%] px-3 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Booking Logic</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-gray-900/50 divide-y divide-gray-700">
+                                ${tableRows}
+                            </tbody>
+                        </table>
+                    </div>
+                `;
+            } else {
+                segmentsHtml = `<div class="p-8 text-center text-gray-400">Detailed card information for this show will be booked soon.</div>`;
+            }
+            
+            container.innerHTML = `
+                <div class="bg-black/30 p-4 flex flex-col sm:flex-row items-center border-b-2 border-yellow-400 gap-4">
+                    <img src="${show.logo || 'https://placehold.co/150x60/111827/4b5563?text=WCW'}" alt="${show.name} Logo" class="h-16 w-auto rounded" onerror="this.onerror=null;this.src='https://placehold.co/150x60/111827/4b5563?text=WCW';">
+                    <div class="text-center sm:text-left">
+                        <h3 class="text-2xl font-bold text-white">${show.name}: <span class="font-semibold text-yellow-300">${show.showName || ''}</span></h3>
+                        <p class="text-md text-gray-400">${displayDate} <span class="font-semibold">${showLength}</span></p>
+                    </div>
+                </div>
+                ${segmentsHtml}`;
+        }
+    </script>
 </body>
 </html>
