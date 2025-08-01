@@ -39,18 +39,23 @@
             <p class="text-xl text-gray-400 mt-2">January - December 2000</p>
         </header>
 
+        <!-- Timeline Buttons -->
         <div class="bg-gray-800 rounded-lg p-4 mb-8">
             <h2 class="text-xl font-bold text-white mb-4 text-center">Event Timeline</h2>
             <div id="timeline-container" class="flex flex-wrap justify-center gap-2">
-                </div>
+                <!-- Buttons will be injected by JS -->
+            </div>
         </div>
         
+        <!-- Show Details Box -->
         <div id="show-details-box" class="content-box bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-lg shadow-xl overflow-hidden mb-8">
              <div id="show-details-content">
-                 </div>
+                 <!-- Selected show details will be injected here -->
+             </div>
         </div>
 
         <main id="dashboard-content" class="grid grid-cols-1 gap-6">
+             <!-- Key Events & Rankings -->
              <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <div id="key-events-box" class="content-box bg-gray-800 rounded-lg shadow-lg p-6">
                     <h2 class="text-2xl font-bold text-white mb-4 border-b-2 border-yellow-400 pb-2">Key Events From This Show</h2>
@@ -62,7 +67,8 @@
                 </div>
             </div>
             
-             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+             <!-- Champions & Roster -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <div id="champions-box" class="content-box bg-gray-800 rounded-lg shadow-lg p-6">
                     <h2 class="text-2xl font-bold text-white mb-4 border-b-2 border-yellow-400 pb-2">Champions</h2>
                     <div id="champions-list" class="grid grid-cols-1 xl:grid-cols-2 gap-4"></div>
@@ -82,6 +88,7 @@
                 </div>
             </div>
 
+            <!-- Faction Power & Stables -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <div id="faction-power-box" class="content-box bg-gray-800 rounded-lg shadow-lg p-6">
                     <h2 class="text-2xl font-bold text-white mb-4 border-b-2 border-yellow-400 pb-2">Faction Power</h2>
@@ -95,7 +102,8 @@
                 </div>
             </div>
 
-             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+             <!-- Tag Teams & Developmental -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <div id="tag-teams-box" class="content-box bg-gray-800 rounded-lg shadow-lg p-6">
                     <h2 class="text-2xl font-bold text-white mb-4 border-b-2 border-yellow-400 pb-2">Tag Teams</h2>
                     <div id="tag-teams-list" class="space-y-4"></div>
@@ -133,6 +141,8 @@
                     'nitro3': [50, 15, 20, 15], 
                     'superbrawl': [65, 15, 10, 10],
                     'uncensored': [70, 15, 10, 5],
+                    'nitro9': [65, 20, 10, 5], 
+                    'nitro11': [60, 20, 15, 5],
                 },
                 stables: {
                     'nWo 2000': ['Bret Hart', 'Jeff Jarrett', 'Kevin Nash', 'Scott Hall', 'Scott Steiner'], 
@@ -159,20 +169,145 @@
                 }
             },
             shows: {
-                nitro1: { name: "Nitro Wk 1", showName: "A New Era Begins", logo: "https://i.ibb.co/zWWtgrH1/WCW-Nitro-2000.jpg", date: "2000-01-03", type: 'tv', segments: [] },
-                thunder1: { name: "Thunder Wk 1", showName: "The Fallout", logo: "https://i.ibb.co/3y97c5CD/WCW-Thunder-2000.jpg", date: "2000-01-06", type: 'tv', segments: [] },
-                saturday1: { name: "Saturday Wk 1", showName: "A Chance to Shine", logo: "https://i.ibb.co/x8jPBr60/WCW-Saturday-2000.jpg", date: "2000-01-08", type: 'tv', segments: [] },
-                nitro2: { name: "Nitro Wk 2", showName: "Defining Excellence", logo: "https://i.ibb.co/zWWtgrH1/WCW-Nitro-2000.jpg", date: "2000-01-10", type: 'tv', segments: [] },
-                thunder2: { name: "Thunder Wk 2", showName: "The Final Countdown", logo: "https://i.ibb.co/3y97c5CD/WCW-Thunder-2000.jpg", date: "2000-01-13", type: 'tv', segments: [] },
-                saturday2: { name: "Saturday Wk 2", showName: "The Go-Home Show", logo: "https://i.ibb.co/x8jPBr60/WCW-Saturday-2000.jpg", date: "2000-01-15", type: 'tv', segments: [] },
-                souledout: { name: "Souled Out", showName: "A New Century of Conflict", logo: "https://i.ibb.co/PZStp2SD/Whisk-f3a65cde3b.jpg", date: "2000-01-16", type: 'ppv', segments: [] },
-                nitro3: { name: "Nitro Wk 3", showName: "Fallout", logo: "https://i.ibb.co/zWWtgrH1/WCW-Nitro-2000.jpg", date: "2000-01-17", type: 'tv', segments: [] },
-                thunder3: { name: "Thunder Wk 3", showName: "Collision Course", logo: "https://i.ibb.co/3y97c5CD/WCW-Thunder-2000.jpg", date: "2000-01-20", type: 'tv', segments: [] },
-                saturday3: { name: "Saturday Wk 3", showName: "Proving Ground", logo: "https://i.ibb.co/x8jPBr60/WCW-Saturday-2000.jpg", date: "2000-01-22", type: 'tv', segments: [] },
-                nitro4: { name: "Nitro Wk 4", showName: "The Triple Threat", logo: "https://i.ibb.co/zWWtgrH1/WCW-Nitro-2000.jpg", date: "2000-01-24", type: 'tv', segments: [] },
-                thunder4: { name: "Thunder Wk 4", showName: "Path of Destruction", logo: "https://i.ibb.co/3y97c5CD/WCW-Thunder-2000.jpg", date: "2000-01-27", type: 'tv', segments: [] },
-                saturday4: { name: "Saturday Wk 4", showName: "SuperBrawl Countdown", logo: "https://i.ibb.co/x8jPBr60/WCW-Saturday-2000.jpg", date: "2000-01-29", type: 'tv', segments: [] },
-                superbrawl: { name: "SuperBrawl", showName: "The War Escalates", logo: "https://i.ibb.co/2Z5Yg1Q/Super-Brawl-2000.jpg", date: "2000-02-20", type: 'ppv', segments: [] },
+                nitro1: { name: "Nitro Wk 1", showName: "A New Era Begins", logo: "https://i.ibb.co/zWWtgrH1/WCW-Nitro-2000.jpg", date: "2000-01-03", type: 'tv', segments: [
+                    { id: 'nitro1-1', duration: '15 min', type: 'Angle', title: 'Opening Segment: A War on Three Fronts', participants: 'Bischoff, nWo 2000, The Revolution', result: 'N/A', logic: "The show opens with a standoff between the heel nWo and the babyface factions Team WCW and The Revolution, establishing the core conflict." },
+                    { id: 'nitro1-2', duration: '5 min', type: 'Angle', title: 'State of the Championships', participants: 'Eric Bischoff', result: 'N/A', logic: "Bischoff vacates the Cruiserweight and Tag Team titles." },
+                    { id: 'nitro1-3', duration: '15 min', type: 'Match', title: 'For the Gold: Cruiserweight Championship 6-Pack Challenge', participants: 'Rey Mysterio Jr. vs. Kidman vs. Juvi vs. Psicosis vs. La Parka vs. Chavo', result: 'Rey Mysterio Jr.', logic: "A new champion is crowned in an all-action spectacle.", titleChange: { titleKey: 'cruiserweight', newChampion: 'Rey Mysterio Jr.' }, keyEvent: 'Rey Mysterio Jr. Wins Cruiserweight Title' },
+                    { id: 'nitro1-4', duration: '10 min', type: 'Angle', title: 'The Ghost of the nWo', participants: 'Jeff Jarrett, Hall, Nash, Goldberg', result: 'N/A', logic: "Goldberg makes a surprise appearance, hitting Spears on Hall and Nash and sending Jarrett fleeing." },
+                    { id: 'nitro1-5', duration: '10 min', type: 'Match', title: 'A Perfect Start', participants: 'Curt Hennig vs. Rick Steiner', result: 'Curt Hennig', logic: "A solid mid-card match. Curt Hennig wins clean, establishing him as a strong babyface." },
+                    { id: 'nitro1-6', duration: '15 min', type: 'Match', title: 'The Ultimate Betrayal', participants: 'Diamond Dallas Page vs. Buff Bagwell', result: 'DDP (by DQ)', logic: "A competitive match until Buff gets himself DQed by using a chair on DDP, completing his heel turn.", rosterChange: { wrestler: 'Buff Bagwell', from: 'babyfaces', to: 'heels' }, keyEvent: 'Buff Bagwell Turns Heel' },
+                    { id: 'nitro1-7', duration: '5 min', type: 'Angle', title: "The Revolution's Mission", participants: 'Chris Benoit, The Revolution', result: 'N/A', logic: "The now babyface Revolution, led by Flair, cuts a promo about restoring prestige to wrestling, putting the nWo on notice." },
+                    { id: 'nitro1-8', duration: '10 min', type: 'Angle', title: 'Setting the Stage', participants: 'Bischoff, Flair, Booker T, Jarrett', result: 'N/A', logic: "A #1 contender's match for the US Title is set for next week: Booker T vs. Chris Benoit." },
+                    { id: 'nitro1-9', duration: '20 min', type: 'Match', title: 'Main Event Match: Heavyweight Collision', participants: 'Hulk Hogan & Sid Vicious vs. Bret Hart & Scott Steiner', result: 'No Contest', logic: "A massive main event that descends into chaos as the rest of the nWo runs in." },
+                    { id: 'nitro1-10', duration: '15 min', type: 'Angle', title: 'Closing Segment: The War Begins', participants: 'nWo 2000, Team WCW, The Revolution', result: 'N/A', logic: "The show ends with a massive three-way brawl. Sting appears in the rafters." },
+                ]},
+                thunder1: { name: "Thunder Wk 1", showName: "The Fallout", logo: "https://i.ibb.co/3y97c5CD/WCW-Thunder-2000.jpg", date: "2000-01-06", type: 'tv', segments: [
+                    { id: 'thunder1-1', duration: '15 min', type: 'Angle', title: "Opening Segment: The Outsiders' Challenge", participants: 'Kevin Nash & Scott Hall', result: 'N/A', logic: "The Outsiders challenge any two wrestlers. The Revolution accepts." },
+                    { id: 'thunder1-2', duration: '10 min', type: 'Match', title: "The Champion's Showcase", participants: 'Rey Mysterio Jr. vs. Disco Inferno', result: 'Rey Mysterio Jr.', logic: "The new Cruiserweight Champion gets a strong non-title victory." },
+                    { id: 'thunder1-4', duration: '5 min', type: 'Angle', title: 'A Star is Born', participants: 'Buff Bagwell', result: 'N/A', logic: "A pre-taped, arrogant vignette from the newly-heel Buff Bagwell." },
+                    { id: 'thunder1-5', duration: '15 min', type: 'Match', title: 'Tag Title Tournament: First Round', participants: 'The Filthy Animalz vs. Kanyon & Bam Bam Bigelow', result: 'The Filthy Animalz', logic: "Konnan & Kidman win an exciting match to advance in the tournament." },
+                    { id: 'thunder1-6', duration: '10 min', type: 'Angle', title: "The Contender's Vow", participants: 'Booker T & Chris Benoit', result: 'N/A', logic: "Booker T and Benoit share a respectful face-to-face promo about their upcoming #1 contender's match." },
+                    { id: 'thunder1-7', duration: '15 min', type: 'Match', title: 'Momentum', participants: 'Booker T vs. Rick Steiner', result: 'Booker T', logic: "Booker T gets a hard-fought, clean victory to build momentum." },
+                    { id: 'thunder1-8', duration: '5 min', type: 'Angle', title: 'The New Generation of nWo', participants: 'nWo 2000 & Buff Bagwell', result: 'N/A', logic: "Buff Bagwell is officially welcomed as the newest member of nWo 2000.", rosterChange: { wrestler: 'Buff Bagwell', newStable: 'nWo 2000' }, keyEvent: 'Buff Bagwell Joins nWo' },
+                    { id: 'thunder1-9', duration: '5 min', type: 'Angle', title: 'Vignette: Sting', participants: '', result: 'N/A', logic: "The short, cryptic vignette airs, deepening the mystery of his return." },
+                    { id: 'thunder1-10', duration: '25 min', type: 'Match', title: 'Main Event Match: Power vs. Technique', participants: 'The Outsiders vs. The Revolution (Benoit & Saturn)', result: 'No Contest', logic: "The main event breaks down when the rest of the nWo interferes." },
+                    { id: 'thunder1-11', duration: '10 min', type: 'Angle', title: 'Closing Segment: Total Chaos', participants: 'nWo 2000, The Revolution, Team WCW', result: 'N/A', logic: "Thunder ends with another massive three-way brawl between the factions." },
+                ]},
+                saturday1: { name: "Saturday Wk 1", showName: "A Chance to Shine", logo: "https://i.ibb.co/x8jPBr60/WCW-Saturday-2000.jpg", date: "2000-01-08", type: 'tv', segments: [
+                    { id: 'saturday1-1', duration: '3 min', type: 'Angle', title: 'Opening Segment: Welcome to Saturday Night', participants: 'Announce Team', result: 'N/A', logic: "The announcers recap the chaotic week." },
+                    { id: 'saturday1-2', duration: '10 min', type: 'Match', title: 'Opening Contest', participants: 'Konnan vs. Disco Inferno', result: 'Konnan', logic: "A member of the Filthy Animalz gets a clean victory." },
+                    { id: 'saturday1-4', duration: '7 min', type: 'Match', title: "The Monster's Return", participants: 'Meng vs. a local jobber', result: 'Meng', logic: "A dominant squash match victory to re-establish Meng." },
+                    { id: 'saturday1-5', duration: '5 min', type: 'Angle', title: 'The Road to the Titles', participants: 'Video Package', result: 'N/A', logic: "A video package hyping the Tag Team Championship tournament." },
+                    { id: 'saturday1-6', duration: '12 min', type: 'Match', title: 'A Matter of Respect', participants: 'Dustin Rhodes vs. "Champagne" Kanyon', result: 'Kanyon', logic: "Kanyon cheats to win, getting a needed victory." },
+                    { id: 'saturday1-7', duration: '17 min', type: 'Match', title: 'Main Event Match: Vampiro vs. The Barbarian', result: 'Vampiro', logic: "Vampiro wins the main event to establish himself as a key player." },
+                    { id: 'saturday1-8', duration: '6 min', type: 'Angle', title: 'Closing Segment: Show Close', participants: '', result: 'N/A', logic: "The announcers recap the night and look ahead to Nitro." },
+                ]},
+                nitro2: { name: "Nitro Wk 2", showName: "Defining Excellence", logo: "https://i.ibb.co/zWWtgrH1/WCW-Nitro-2000.jpg", date: "2000-01-10", type: 'tv', segments: [
+                    { id: 'nitro2-1', duration: '15 min', type: 'Angle', title: 'Opening Segment: The Revolution Implodes', participants: 'Ric Flair, The Revolution, Shane Douglas', result: 'N/A', logic: 'The babyface Revolution publicly fires the disruptive heel Shane Douglas from the group, solidifying their own heroic stance.', rosterChange: { wrestler: 'Shane Douglas', removeStable: 'The Revolution'}, keyEvent: 'Shane Douglas Fired from Revolution' },
+                    { id: 'nitro2-6', duration: '10 min', type: 'Match', title: 'Cruiserweight Action', participants: 'Juventud Guerrera vs. Billy Kidman', result: 'Juventud Guerrera', logic: 'A great babyface vs babyface cruiserweight match to build Juvi for his title shot.' },
+                    { id: 'nitro2-2', duration: '12 min', type: 'Match', title: 'Tag Title Tournament: First Round', participants: 'Eddie Guerrero & Dean Malenko vs. Meng & The Barbarian', result: 'The Revolution', logic: 'The babyface duo use their superior technique to advance in the tournament.' },
+                    { id: 'nitro2-5', duration: '6 min', type: 'Angle', title: 'The Grudge Intensifies', participants: 'DDP & Buff Bagwell', result: 'N/A', logic: 'DDP challenges Buff Bagwell to a match at Souled Out.' },
+                    { id: 'nitro2-3', duration: '5 min', type: 'Angle', title: 'A Champion\'s Warning', participants: 'Bret Hart & Jeff Jarrett', result: 'N/A', logic: 'Bret tells Jarrett not to be so arrogant, as arrogance leads to mistakes.' },
+                    { id: 'nitro2-4', duration: '12 min', type: 'Match', title: 'US Title Contender Preview', participants: 'Sid Vicious vs. Scott Steiner', result: 'Sid Vicious (by DQ)', logic: 'Sid is about to win when the nWo interferes. Sid fights them off, looking unstoppable.' },
+                    { id: 'nitro2-7', duration: '5 min', type: 'Angle', title: 'The Icon Watches', participants: 'Sting', result: 'N/A', logic: 'Another cryptic vignette. This time we see Sting watching footage of Buff Bagwell joining nWo 2000.' },
+                    { id: 'nitro2-8', duration: '25 min', type: 'Match', title: 'Main Event Match: #1 Contender for US Title', participants: 'Booker T vs. Chris Benoit', result: 'Booker T', logic: 'A clean, technical classic between two babyfaces. Booker T wins and earns respect from Benoit.', icon: 'https://i.ibb.co/zVT1C52p/images-wrestling-titles-wcw-wcw-united-states-championship-95-01.webp', keyEvent: 'Booker T Earns US Title Shot' },
+                    { id: 'nitro2-9', duration: '10 min', type: 'Angle', title: 'Closing Segment: A Message Sent', participants: 'Booker T, Jeff Jarrett, nWo 2000', result: 'N/A', logic: 'The show ends with a staredown between the champion and the new challenger.' },
+                ]},
+                thunder2: { name: "Thunder Wk 2", showName: "The Final Countdown", logo: "https://i.ibb.co/3y97c5CD/WCW-Thunder-2000.jpg", date: "2000-01-13", type: 'tv', segments: [
+                    { id: 'thunder2-1', duration: '15 min', type: 'Angle', title: "Opening Segment: A Champion's Arrogance", participants: 'Jeff Jarrett & The nWo 2000', result: 'N/A', logic: 'Jarrett opens the show, mocking Booker T and claiming he has no chance at Souled Out.' },
+                    { id: 'thunder2-2', duration: '15 min', type: 'Match', title: 'Tag Title Tournament: First Round', participants: 'DDP & Curt Hennig vs. Kanyon & Rick Steiner', result: 'DDP & Curt Hennig', logic: 'DDP and his new partner Hennig show surprising chemistry, winning their first-round match.' },
+                    { id: 'thunder2-3', duration: '8 min', type: 'Angle', title: 'A Rivalry Renewed', participants: 'Rey Mysterio Jr. & Juventud Guerrera', result: 'N/A', logic: 'A face-to-face interview in the ring between Rey and Juvi, hyping their PPV match.' },
+                    { id: 'thunder2-4', duration: '12 min', type: 'Match', title: 'Redemption', participants: 'Chris Benoit vs. Bam Bam Bigelow', result: 'Chris Benoit', logic: 'After his loss on Nitro, Benoit gets a strong, decisive submission victory.' },
+                    { id: 'thunder2-5', duration: '5 min', type: 'Angle', title: 'A Rogue Agent', participants: 'Shane Douglas', result: 'N/A', logic: 'Shane Douglas cuts a promo from an undisclosed location, vowing revenge on Ric Flair.' },
+                    { id: 'thunder2-8', duration: '15 min', type: 'Match', title: 'Tag Team Action', participants: 'Konnan & Kidman vs Meng & Barbarian', result: 'Konnan & Kidman', logic: 'A showcase for the Filthy Animalz.' },
+                    { id: 'thunder2-9', duration: '10 min', type: 'Match', title: 'Midcard Clash', participants: 'Vampiro vs Disco Inferno', result: 'Vampiro', logic: 'Vampiro continues his winning ways.' },
+                    { id: 'thunder2-6', duration: '20 min', type: 'Match', title: 'Main Event Match: Faction Warfare', participants: 'Goldberg & Sid Vicious vs Bret Hart & Scott Steiner', result: 'Goldberg & Sid Vicious (DQ)', logic: 'A huge main event tag match. The babyfaces win by DQ when the rest of nWo interferes. The show ends in a brawl.' },
+                    { id: 'thunder2-7', duration: '10 min', type: 'Angle', title: 'Closing Segment: The Final Staredown', participants: 'Goldberg & Bret Hart', result: 'N/A', logic: 'During the brawl, Goldberg gets face-to-face with Bret Hart for an intense staredown as the show goes off the air.' },
+                    { id: 'thunder2-10', duration: '10 min', type: 'Angle', title: 'Closing Hype', participants: 'Video Package', result: 'N/A', logic: 'A final video package hyping the Souled Out PPV.' },
+                ]},
+                saturday2: { name: "Saturday Wk 2", showName: "The Go-Home Show", logo: "https://i.ibb.co/x8jPBr60/WCW-Saturday-2000.jpg", date: "2000-01-15", type: 'tv', segments: [
+                    { id: 'saturday2-1', duration: '10 min', type: 'Angle', title: 'Opening Segment: Final Hype', participants: 'Announce Team & Video Packages', result: 'N/A', logic: 'The show is dedicated to hyping Souled Out.' },
+                    { id: 'saturday2-2', duration: '12 min', type: 'Match', title: 'Cruiserweight Action', participants: 'Billy Kidman vs. Chavo Guerrero Jr.', result: 'Billy Kidman' },
+                    { id: 'saturday2-3', duration: '10 min', type: 'Match', title: 'Mid-Card Collision', participants: 'Vampiro vs. Disco Inferno', result: 'Vampiro' },
+                    { id: 'saturday2-5', duration: '10 min', type: 'Match', title: 'Tag Preview', participants: 'Kanyon vs Konnan', result: 'Konnan' },
+                    { id: 'saturday2-4', duration: '13 min', type: 'Match', title: 'Main Event Match: Curt Hennig vs. Meng', result: 'Curt Hennig' },
+                    { id: 'saturday2-6', duration: '5 min', type: 'Angle', title: 'Closing Segment: Final Words', participants: 'Commentary', result: 'N/A', logic: 'Final hard sell for the PPV.' },
+                ]},
+                souledout: { name: "Souled Out", showName: "A New Century of Conflict", logo: "https://i.ibb.co/PZStp2SD/Whisk-f3a65cde3b.jpg", date: "2000-01-16", type: 'ppv', segments: [
+                    { id: 'souledout-1', duration: '15 min', type: 'Match', title: 'Opening Segment: WCW Cruiserweight Championship', participants: 'Rey Mysterio Jr. (c) vs. Juventud Guerrera', result: 'Rey Mysterio Jr.', logic: 'Rey retains. After the match, Juventud viciously attacks Rey, turning heel.', rosterChange: { wrestler: 'Juventud Guerrera', from: 'babyfaces', to: 'heels' }, keyEvent: 'Juventud Guerrera Turns Heel' },
+                    { id: 'souledout-2', duration: '18 min', type: 'Match', title: 'Grudge Match', participants: 'DDP vs. Buff Bagwell', result: 'Diamond Dallas Page', logic: 'A wild, intense brawl. DDP gets his revenge on Bagwell.' },
+                    { id: 'souledout-3', duration: '15 min', type: 'Match', title: 'The Revolution in Action', participants: 'Eddie Guerrero vs. "Champagne" Kanyon', result: 'Eddie Guerrero', logic: 'A showcase match for Eddie, who wins cleanly with the Frog Splash.' },
+                    { id: 'souledout-4', duration: '15 min', type: 'Match', title: 'Monster vs. Giant', participants: 'Sid Vicious vs. Kevin Nash', result: 'Sid Vicious', logic: 'A true heavyweight spectacle. Sid wins after hitting a massive Powerbomb.' },
+                    { id: 'souledout-5', duration: '22 min', type: 'Match', title: 'Tag Title Tournament - Semi-Final', participants: 'The Filthy Animalz vs. The Revolution (Malenko & Saturn)', result: 'The Revolution', logic: 'A potential show-stealer. Malenko & Saturn win after a grueling, technical match.' },
+                    { id: 'souledout-6', duration: '25 min', type: 'Match', title: 'WCW United States Heavyweight Championship', participants: 'Jeff Jarrett (c) vs. Booker T', result: 'Jeff Jarrett', logic: 'A fantastic co-main event. Jarrett retains the title after blatant interference from nWo 2000.', icon: 'https://i.ibb.co/zVT1C52p/images-wrestling-titles-wcw-wcw-united-states-championship-95-01.webp' },
+                    { id: 'souledout-8', duration: '18 min', type: 'Match', title: 'Tag Team Turmoil', participants: 'Meng & Barbarian vs La Parka & Psicosis', result: 'Meng & Barbarian', logic: 'A hard hitting match to showcase the power of Meng and Barbarian.' },
+                    { id: 'souledout-9', duration: '22 min', type: 'Match', title: 'Technical Showcase', participants: 'Dean Malenko vs Billy Kidman', result: 'Dean Malenko', logic: 'A classic technical wrestling match.' },
+                    { id: 'souledout-7', duration: '30 min', type: 'Match', title: 'Main Event Match: WCW World Heavyweight Championship (Triple Threat)', participants: 'Bret Hart (c) vs. Goldberg vs. Ric Flair', result: 'Bret Hart', logic: 'A chaotic main event that breaks down into a massive brawl. Bret Hart manages to pin Ric Flair. Sting appears in the rafters as the show ends.', icon: 'https://i.ibb.co/cSMhK556/wcw-world-heavyweight-championship.png' },
+                ]},
+                nitro3: { name: "Nitro Wk 3", showName: "Fallout", logo: "https://i.ibb.co/zWWtgrH1/WCW-Nitro-2000.jpg", date: "2000-01-17", type: 'tv', segments: [
+                    { id: 'nitro3-1', duration: '15 min', type: 'Angle', title: 'Opening Segment: The Hitman Has a Target', participants: 'Bret Hart, nWo 2000, Goldberg', result: 'N/A', logic: "Bret Hart and the nWo celebrate his victory. Goldberg interrupts, furious, and challenges Bret for SuperBrawl. Bret accepts... if Goldberg can beat two nWo members tonight in a gauntlet." },
+                    { id: 'nitro3-3', duration: '5 min', type: 'Angle', title: 'The Juice is Loose', participants: 'Juventud Guerrera, Rey Mysterio Jr.', result: 'N/A', logic: "A vignette shows the new heel Juventud mocking Rey for being a 'good little boy'." },
+                    { id: 'nitro3-4', duration: '12 min', type: 'Match', title: 'Unfinished Business', participants: 'Booker T vs. Scott Steiner', result: 'Booker T (by DQ)', logic: 'Booker T is about to win when Jeff Jarrett attacks him with a guitar, continuing their heated rivalry.' },
+                    { id: 'nitro3-5', duration: '8 min', type: 'Angle', title: 'The Franchise Player', participants: 'Shane Douglas', result: 'N/A', logic: "Shane Douglas challenges any member of The Revolution to a match next week to prove they made a mistake." },
+                    { id: 'nitro3-6', duration: '8 min', 'type': 'Match', title: 'Goldberg\'s Gauntlet Part 1', participants: 'Goldberg vs. Buff Bagwell', result: 'Goldberg', logic: 'Goldberg runs through the newest nWo member in a dominant squash.' },
+                    { id: 'nitro3-2', duration: '15 min', type: 'Match', title: 'Tag Title Tournament - Semi-Final', participants: 'DDP & Curt Hennig vs. The Outsiders', result: 'The Outsiders', logic: 'DDP is about to win when his partner Curt Hennig refuses a tag and walks out. The Outsiders take advantage for the win. Hennig turns heel.', rosterChange: { wrestler: 'Curt Hennig', from: 'babyfaces', to: 'heels', newStable: 'nWo 2000' }, keyEvent: 'Curt Hennig Turns Heel & Joins nWo' },
+                    { id: 'nitro3-7', duration: '8 min', type: 'Angle', title: 'The Icon Has Landed', participants: 'Sting, Lex Luger', result: 'N/A', logic: 'The lights go out. When they come back on, Sting is in the ring. He destroys his old rival Lex Luger, officially returning to action.', keyEvent: 'Sting Officially Returns' },
+                    { id: 'nitro3-8', duration: '18 min', type: 'Match', title: 'Main Event Match: Goldberg\'s Gauntlet Part 2', participants: 'Goldberg vs. Scott Hall', result: 'Goldberg', logic: 'A much tougher match for Goldberg, but he overcomes the odds and wins, earning his World Title shot.' },
+                    { id: 'nitro3-9', duration: '11 min', type: 'Angle', title: 'Closing Segment: The SuperBrawl Staredown', participants: 'Goldberg, Bret Hart, Sting', result: 'N/A', logic: 'Bret Hart comes out to confront Goldberg. Suddenly, Sting appears behind Bret and hits a Scorpion Death Drop. He picks up the World Title and stares down Goldberg as Nitro goes off the air.' },
+                ]},
+                thunder3: { name: "Thunder Wk 3", showName: "Collision Course", logo: "https://i.ibb.co/3y97c5CD/WCW-Thunder-2000.jpg", date: "2000-01-20", type: 'tv', segments: [
+                    { id: 'thunder3-1', duration: '10 min', type: 'Angle', title: 'Opening Segment: A Three-Headed Problem', participants: 'Bischoff, Goldberg, Sting, Flair', result: 'N/A', logic: 'Bischoff announces a Triple Threat match for next week\'s Nitro between Sting, Goldberg, and Chris Benoit to determine the #1 contender.' },
+                    { id: 'thunder3-2', duration: '12 min', type: 'Match', title: 'Cruiserweight Chaos', participants: 'Rey Mysterio Jr. & Billy Kidman vs. Juventud Guerrera & Psicosis', result: 'Guerrera & Psicosis', logic: 'The new heel Juventud steals the pin on Kidman after a blind tag.' },
+                    { id: 'thunder3-3', duration: '13 min', type: 'Match', title: 'The Grudge Continues', participants: 'Booker T vs. Buff Bagwell', result: 'Booker T', logic: 'Booker T gets a measure of revenge against the nWo by defeating their newest member cleanly.' },
+                    { id: 'thunder3-5', duration: '20 min', type: 'Match', title: 'Technical Masters', participants: 'Dean Malenko vs Perry Saturn', result: 'Dean Malenko', logic: 'A pure wrestling classic between two members of The Revolution.' },
+                    { id: 'thunder3-6', duration: '15 min', type: 'Match', title: 'Heavyweight Bout', participants: 'Meng vs Bam Bam Bigelow', result: 'No Contest', logic: 'The match ends in a double count-out as both men brawl to the back.' },
+                    { id: 'thunder3-7', duration: '10 min', type: 'Angle', title: 'Post-Match Interviews', participants: 'Various', result: 'N/A', logic: 'Interviews with the winners of tonight\'s matches.' },
+                    { id: 'thunder3-8', duration: '20 min', type: 'Match', title: 'Cruiserweight Action', participants: 'Chavo Guerrero Jr. vs La Parka', result: 'Chavo Guerrero Jr.', logic: 'A fun, fast-paced match.' },
+                    { id: 'thunder3-4', duration: '20 min', type: 'Match', title: 'Main Event Match: Sid Vicious & DDP vs. Kevin Nash & Scott Steiner', result: 'Sid Vicious & DDP', logic: 'A huge babyface tag team win. Sid pins Steiner after a Powerbomb.' },
+                ]},
+                saturday3: { name: "Saturday Wk 3", showName: "Proving Ground", logo: "https://i.ibb.co/x8jPBr60/WCW-Saturday-2000.jpg", date: "2000-01-22", type: 'tv', segments: [
+                    { id: 'saturday3-1', duration: '15 min', type: 'Match', title: 'Opening Contest: Tag Team Action', participants: 'The Filthy Animalz vs. Disco Inferno & The Cat', result: 'The Filthy Animalz', logic: 'Konnan and Kidman get a solid win.' },
+                    { id: 'saturday3-2', duration: '12 min', type: 'Match', title: 'Veteran\'s Showcase', participants: 'Dustin Rhodes vs. The Barbarian', result: 'Dustin Rhodes' },
+                    { id: 'saturday3-4', duration: '15 min', type: 'Match', title: 'Cruiserweight Battle', participants: 'Psicosis vs Chavo Guerrero Jr.', result: 'Psicosis', logic: 'A preview of the cruiserweight division\'s depth.' },
+                    { id: 'saturday3-3', duration: '18 min', type: 'Match', title: 'Main Event Match: Vampiro vs. Rick Steiner', result: 'Vampiro', logic: 'Vampiro gets a huge win over a credible heel opponent.' },
+                ]},
+                nitro4: { name: "Nitro Wk 4", showName: "The Triple Threat", logo: "https://i.ibb.co/zWWtgrH1/WCW-Nitro-2000.jpg", date: "2000-01-24", type: 'tv', segments: [
+                    { id: 'nitro4-1', duration: '10 min', type: 'Angle', title: 'Opening Segment: A New Challenger', participants: 'Juventud Guerrera & Rey Mysterio Jr.', result: 'N/A', logic: 'Rey accepts Juvi\'s challenge for SuperBrawl.' },
+                    { id: 'nitro4-2', duration: '15 min', type: 'Match', title: 'Tag Tournament Finals Preview', participants: 'The Outsiders vs. Dean Malenko & Perry Saturn', result: 'The Revolution (by DQ)', logic: 'The Revolution is about to win when nWo interferes.' },
+                    { id: 'nitro4-3', duration: '5 min', type: 'Angle', title: 'The Franchise vs. The Enforcer', participants: 'Shane Douglas & Chris Benoit', result: 'N/A', logic: 'Backstage, Shane Douglas attacks Chris Benoit before their match.' },
+                    { id: 'nitro4-4', duration: '15 min', type: 'Match', title: 'Unsanctioned Brawl', participants: 'Booker T vs. Jeff Jarrett', result: 'No Contest', logic: 'This non-title match quickly breaks down into a wild brawl.' },
+                    { id: 'nitro4-8', duration: '15 min', type: 'Match', title: 'Tag Team Action', participants: 'Meng & Barbarian vs Filthy Animalz', result: 'Meng & Barbarian', logic: 'A clash of styles with power winning out.' },
+                    { id: 'nitro4-9', duration: '5 min', type: 'Angle', title: 'The Revolution\'s Response', participants: 'Ric Flair', result: 'N/A', logic: 'Flair promises that The Revolution will hold gold soon.' },
+                    { id: 'nitro4-5', duration: '15 min', type: 'Match', title: 'The Icon vs. The Total Package', participants: 'Sting vs. Lex Luger', result: 'Sting', logic: 'Sting makes his official in-ring return, defeating his old rival Lex Luger cleanly.' },
+                    { id: 'nitro4-6', duration: '25 min', type: 'Match', title: 'Main Event Match: #1 Contender Triple Threat', participants: 'Goldberg vs. Sting vs. Chris Benoit', result: 'Sting', logic: 'In the chaos, Sting manages to hit the Scorpion Death Drop on Benoit for the pin, becoming the #1 contender.', keyEvent: 'Sting becomes #1 Contender for World Title' },
+                    { id: 'nitro4-7', duration: '10 min', type: 'Angle', title: 'Closing Segment: Face to Face', participants: 'Sting & Bret Hart', result: 'N/A', logic: 'Bret Hart comes out to the stage and has an intense staredown with Sting as Nitro goes off the air.' },
+                ]},
+                thunder4: { name: "Thunder Wk 4", showName: "Path of Destruction", logo: "https://i.ibb.co/3y97c5CD/WCW-Thunder-2000.jpg", date: "2000-01-27", type: 'tv', segments: [
+                    { id: 'thunder4-1', duration: '15 min', type: 'Angle', title: 'Opening Segment: The Champion\'s Address', participants: 'Bret Hart & Sting', result: 'N/A', logic: 'Bret Hart opens the show but is quickly interrupted by Sting. They trade intense words, setting the stage for their SuperBrawl main event.' },
+                    { id: 'thunder4-2', duration: '12 min', type: 'Match', title: 'Cruiserweight Contenders', participants: 'Rey Mysterio Jr. vs. Psicosis', result: 'Rey Mysterio Jr.', logic: 'A fast-paced match to keep the champion strong. Juventud Guerrera watches from commentary.' },
+                    { id: 'thunder4-3', duration: '15 min', type: 'Match', title: 'Grudge Match', participants: 'DDP vs. Buff Bagwell', result: 'DDP (by DQ)', logic: 'The feud continues. Buff gets DQed when the nWo interferes. The Filthy Animalz make the save.' },
+                    { id: 'thunder4-4', duration: '10 min', type: 'Angle', title: 'A Challenge for a Legend', participants: 'Chris Benoit & Ric Flair', result: 'N/A', logic: 'Benoit, frustrated by his loss on Nitro, challenges Ric Flair to a "respect" match at SuperBrawl to prove he can still hang with the best.' },
+                    { id: 'thunder4-5', duration: '15 min', type: 'Match', title: 'Tag Team Showcase', participants: 'Eddie Guerrero & Perry Saturn vs. The Harris Boys', result: 'The Revolution' },
+                    { id: 'thunder4-6', duration: '10 min', type: 'Angle', title: 'A Perfect Betrayal Explained', participants: 'Curt Hennig', result: 'N/A', logic: 'Hennig explains he turned on DDP because he\'s a winner, and DDP is a loser. He says he\'s with the nWo to get more gold.' },
+                    { id: 'thunder4-7', duration: '18 min', type: 'Match', title: 'Main Event Match: Goldberg vs. Kevin Nash', result: 'Goldberg', logic: 'Goldberg gets a measure of revenge against the nWo with a dominant win over Nash in the main event.' },
+                    { id: 'thunder4-8', duration: '15 min', type: 'Angle', title: 'Closing Segment: An Icon\'s Warning', participants: 'Sting, Bret Hart', result: 'N/A', logic: 'As Goldberg celebrates, Sting appears in the rafters, pointing his bat at Bret Hart, who is watching from the stage. A final visual to hype the PPV.' },
+                ]},
+                saturday4: { name: "Saturday Wk 4", showName: "SuperBrawl Countdown", logo: "https://i.ibb.co/x8jPBr60/WCW-Saturday-2000.jpg", date: "2000-01-29", type: 'tv', segments: [
+                    { id: 'saturday4-1', duration: '10 min', type: 'Angle', title: 'Opening Segment: Countdown', participants: 'Announce Team', result: 'N/A', logic: 'The show is dedicated to video packages and analysis of the upcoming SuperBrawl card.' },
+                    { id: 'saturday4-2', duration: '15 min', type: 'Match', title: 'Cruiserweight Action', participants: 'Billy Kidman & Rey Mysterio Jr. vs. Juventud Guerrera & Psicosis', result: 'Kidman & Mysterio' },
+                    { id: 'saturday4-3', duration: '15 min', type: 'Match', title: 'Heavyweight Clash', participants: 'Vampiro vs. Rick Steiner', result: 'Vampiro' },
+                    { id: 'saturday4-4', duration: '20 min', type: 'Match', title: 'Main Event Match: Chris Benoit vs. Bam Bam Bigelow', result: 'Chris Benoit', logic: 'Benoit gets a strong win to build momentum for his match against Flair.' },
+                ]},
+                superbrawl: { name: "SuperBrawl", showName: "The War Escalates", logo: "https://i.ibb.co/2Z5Yg1Q/Super-Brawl-2000.jpg", date: "2000-02-20", type: 'ppv', segments: [
+                    { id: 'sb-1', duration: '18 min', type: 'Match', title: 'Opening Segment: Tag Team Championship Finals', participants: 'The Revolution (Dean Malenko & Perry Saturn) vs. The Outsiders', result: 'The Revolution', logic: 'The Revolution win the vacant titles in a classic!', titleChange: { titleKey: 'tag', newChampion: ['Dean Malenko', 'Perry Saturn'] }, keyEvent: 'New Tag Team Champions Crowned' },
+                    { id: 'sb-2', duration: '15 min', type: 'Match', title: 'Cruiserweight Championship', participants: 'Rey Mysterio Jr. (c) vs Juventud Guerrera', result: 'Rey Mysterio Jr.', logic: 'Rey retains in a spectacular, high-flying match.' },
+                    { id: 'sb-3', duration: '12 min', type: 'Match', title: 'Grudge Match', participants: 'Shane Douglas vs Eddie Guerrero', result: 'Eddie Guerrero', logic: 'Eddie gets the win for The Revolution, but Douglas attacks him after the match.' },
+                    { id: 'sb-4', duration: '20 min', type: 'Match', title: 'United States Championship', participants: 'Jeff Jarrett (c) vs Booker T', result: 'Jeff Jarrett', logic: 'Jarrett retains, but only after blatant cheating and nWo interference.' },
+                    { id: 'sb-5', duration: '15 min', type: 'Match', title: 'No Holds Barred', participants: 'DDP vs Curt Hennig', result: 'DDP', logic: 'DDP gets his revenge on Hennig in a wild brawl.' },
+                    { id: 'sb-8', duration: '15 min', type: 'Match', title: 'Respect Match', participants: 'Chris Benoit vs. Ric Flair', result: 'Chris Benoit', logic: 'After a technical masterpiece, Benoit makes Flair tap out. They shake hands and embrace after the match, showing mutual respect.' },
+                    { id: 'sb-7', duration: '20 min', type: 'Match', title: 'Tag Team War', participants: 'Goldberg & Sid Vicious vs Kevin Nash & Scott Steiner', result: 'Goldberg & Sid Vicious', logic: 'The WCW powerhouses get a big win over their nWo rivals.' },
+                    { id: 'sb-6', duration: '35 min', type: 'Match', title: 'Main Event Match: WCW World Heavyweight Championship', participants: 'Bret Hart (c) vs Sting', result: 'Bret Hart', logic: 'After a long, back-and-forth classic, the nWo attempts to interfere. Goldberg and Team WCW fight them off. As the ref is distracted, Hollywood Hogan makes a shocking return, hits Sting with the title belt, allowing Bret to get the win. Hogan spray paints "nWo" on Sting\'s back as the show ends.', rosterChange: { wrestler: 'Hulk Hogan', newStable: 'nWo 2000' }, keyEvent: 'Hollywood Hogan Returns, Joins nWo 2000' },
+                ]},
                 nitro5: { name: "Nitro Wk 5", showName: "The New World Order of Wrestling", logo: "https://i.ibb.co/zWWtgrH1/WCW-Nitro-2000.jpg", date: "2000-02-28", type: 'tv', segments: [] },
                 thunder5: { name: "Thunder Wk 5", showName: "Drawing the Line", logo: "https://i.ibb.co/3y97c5CD/WCW-Thunder-2000.jpg", date: "2000-03-02", type: 'tv', segments: [] },
                 saturday5: { name: "Saturday Wk 5", showName: "On the Brink", logo: "https://i.ibb.co/x8jPBr60/WCW-Saturday-2000.jpg", date: "2000-03-04", type: 'tv', segments: [] },
