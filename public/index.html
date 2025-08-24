@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>WCW 2000 Tracker • Dashboard</title>
+  <link rel="stylesheet" href="/css/styles.css"/>
+</head>
+<body>
+  
+<header class="site">
+  <div class="navwrap">
+    <div class="logo">
+      <span class="wcw">WCW</span> <span>2000 Tracker</span><br/>
+      <small>TEW 9 • Your booking, week-by-week</small>
+    </div>
+    <nav>
+      <a href="/index.html">Dashboard</a>
+      <a href="/roster.html">Roster</a>
+      <a href="/champions.html">Champions</a>
+      <a href="/teams.html">Tag Teams</a>
+      <a href="/factions.html">Factions</a>
+      <a href="/developmental.html">Developmental</a>
+      <a href="/schedule.html">Schedule</a>
+    </nav>
+    <div class="right"><button id="btnPrev" class="badge">←</button><label for="datePicker" class="badge">Week</label><input id="datePicker" type="date" min="2000-01-01" max="2000-12-31"/><button id="btnNext" class="badge">→</button></div>
+  </div>
+</header>
+
+  <main>
+    
+<section class="kpis">
+  <div class="kpi"><div class="label">Current Week</div><div id="kWeek" class="value">—</div></div>
+  <div class="kpi"><div class="label">Titles</div><div id="kTitles" class="value">—</div></div>
+  <div class="kpi"><div class="label">Roster</div><div id="kRoster" class="value">—</div></div>
+  <div class="kpi"><div class="label">Factions</div><div id="kFactions" class="value">—</div></div>
+</section>
+
+<div class="grid cols-2" style="margin-top:16px">
+  <section class="card">
+    <h1>Week Snapshot</h1>
+    <div id="weekNotes" class="badge"></div>
+    <h2 style="margin-top:14px">Champions</h2>
+    <table id="tblChampions"><thead><tr><th>Title</th><th>Champion</th><th>Since</th></tr></thead><tbody></tbody></table>
+<p style="margin-top:8px"><a href="/champions.html" class="badge">View all titles →</a></p>
+  </section>
+  <section class="card">
+    <h1>Shows This Week</h1>
+    <table id="tblWeekShows"><thead><tr><th>Date</th><th>Show</th><th>Length</th></tr></thead><tbody></tbody></table>
+  </section>
+</div>
+
+  </main>
+  <footer class="footer">Built for local use · WCW 2000 • Node/Express • No DB required</footer>
+  <script src="/js/app.js"></script>
+  
+<script>
+(async function(){
+  const { weekKey, snap } = await loadWeekSnapshot();
+  document.getElementById("kWeek").textContent = weekKey;
+  document.getElementById("kTitles").textContent = snap.titles.length;
+  document.getElementById("kRoster").textContent = snap.roster.length;
+  document.getElementById("kFactions").textContent = snap.factions.length;
+  document.getElementById("weekNotes").textContent = snap.notes || "—";
+
+  // champions
+  const SLUGS = {
+    "WCW World Heavyweight Championship":"world-heavyweight",
+    "WCW United States Championship":"united-states",
+    "WCW World Tag Team Championship":"world-tag-team",
+    "WCW Cruiserweight Championship":"cruiserweight",
+    "WCW Hardcore Championship":"hardcore",
+    "WCW World Television Championship":"world-television"
+  };
+
+  const tb = document.querySelector("#tblChampions tbody");
+  tb.innerHTML = snap.titles.map(t=>{const slug=SLUGS[t.name]||""; const link = slug? `<a href="/belt.html?slug=${slug}&date=${encodeURIComponent(document.getElementById('datePicker').value)}">${t.name}</a>` : t.name; return `<tr><td>${link}</td><td>${t.champion}</td><td>${t.since||""}</td></tr>`;}).join("");
+
+  // shows in the current week (Mon-Sun)
+  const sched = await fetchJSON("/api/schedule");
+  const d0 = new Date(weekKey); // Monday
+  const d6 = new Date(weekKey); d6.setUTCDate(d6.getUTCDate()+6);
+  const rows = [];
+  function pushRows(list){
+    for(const s of list){
+      const d = new Date(s.date+"T00:00:00Z");
+      if (d>=d0 && d<=d6){
+        rows.push(`<tr><td>${s.date}</td><td>${s.show}</td><td>${s.minutes} mins</td></tr>`);
+      }
+    }
+  }
+  pushRows(sched.nitro); pushRows(sched.thunder); pushRows(sched.saturday_night); pushRows(sched.ppv);
+  document.querySelector("#tblWeekShows tbody").innerHTML = rows.join("") || `<tr><td colspan="3">No shows scheduled this week.</td></tr>`;
+})();
+</script>
+
+</body>
+</html>

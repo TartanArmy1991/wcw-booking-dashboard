@@ -1,0 +1,69 @@
+{
+  "date": "1999-11-21",
+  "show": "Mayhem",
+  "minutes": 180,
+  "brand": "PPV",
+  "notes": "",
+  "card": [
+    {
+      "order": 1,
+      "type": "Tournament SF",
+      "title": "Chris Benoit def. Jeff Jarrett \u2014 WCW World Heavyweight Championship Tournament Semifinal"
+    },
+    {
+      "order": 2,
+      "type": "Title Match",
+      "title": "Evan Karagias def. Disco Inferno (c) \u2014 WCW Cruiserweight Championship"
+    },
+    {
+      "order": 3,
+      "type": "Hardcore",
+      "title": "Norman Smiley def. Brian Knobbs \u2014 for the inaugural WCW Hardcore Championship"
+    },
+    {
+      "order": 4,
+      "type": "Elimination",
+      "title": "The Revolution (Dean Malenko, Perry Saturn & Asya) def. Filthy Animals (Eddie Guerrero, Billy Kidman & Torrie Wilson) \u2014 Survivor: Saturn"
+    },
+    {
+      "order": 5,
+      "type": "Retirement",
+      "title": "Buff Bagwell def. Curt Hennig \u2014 Retirement match"
+    },
+    {
+      "order": 6,
+      "type": "Tournament SF",
+      "title": "Bret Hart def. Sting \u2014 WCW World Heavyweight Championship Tournament Semifinal"
+    },
+    {
+      "order": 7,
+      "type": "Dog Collar",
+      "title": "Vampiro def. Berlyn"
+    },
+    {
+      "order": 8,
+      "type": "Match",
+      "title": "Meng def. The Total Package (Lex Luger)"
+    },
+    {
+      "order": 9,
+      "type": "Title vs. Title",
+      "title": "Scott Hall (c) def. Booker T \u2014 WCW United States & World Television Championships"
+    },
+    {
+      "order": 10,
+      "type": "No Contest",
+      "title": "David Flair vs. Kimberly Page \u2014 No Contest"
+    },
+    {
+      "order": 11,
+      "type": "\"I Quit\"",
+      "title": "Goldberg def. Sid Vicious \u2014 I Quit match"
+    },
+    {
+      "order": 12,
+      "type": "Tournament Final",
+      "title": "Bret Hart def. Chris Benoit \u2014 Final of the WCW World Heavyweight Championship Tournament (wins vacant title)"
+    }
+  ]
+}

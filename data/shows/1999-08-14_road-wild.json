@@ -1,0 +1,54 @@
+{
+  "date": "1999-08-14",
+  "show": "Road Wild",
+  "minutes": 180,
+  "brand": "PPV",
+  "notes": "",
+  "card": [
+    {
+      "order": 1,
+      "type": "Six-Man Tag",
+      "title": "Rey Misterio Jr., Billy Kidman & Eddie Guerrero def. Vampiro & Insane Clown Posse (Violent J & Shaggy 2 Dope)"
+    },
+    {
+      "order": 2,
+      "type": "Title Match",
+      "title": "Harlem Heat (Booker T & Stevie Ray) def. Kanyon & Bam Bam Bigelow (c) \u2014 WCW World Tag Team Championship"
+    },
+    {
+      "order": 3,
+      "type": "Six-Man Tag",
+      "title": "The Revolution (Perry Saturn, Shane Douglas & Dean Malenko) def. West Texas Rednecks (Barry Windham, Curt Hennig & Bobby Duncum Jr.) (w/ Kendall Windham)"
+    },
+    {
+      "order": 4,
+      "type": "Match",
+      "title": "Buff Bagwell def. Ernest Miller (w/ Sonny Onoo)"
+    },
+    {
+      "order": 5,
+      "type": "Title Match",
+      "title": "Chris Benoit (c) def. Diamond Dallas Page \u2014 WCW United States Heavyweight Championship (No DQ)"
+    },
+    {
+      "order": 6,
+      "type": "Match",
+      "title": "Sid Vicious def. Sting"
+    },
+    {
+      "order": 7,
+      "type": "Match",
+      "title": "Goldberg def. Rick Steiner"
+    },
+    {
+      "order": 8,
+      "type": "Match",
+      "title": "Randy Savage def. Dennis Rodman"
+    },
+    {
+      "order": 9,
+      "type": "Title Match",
+      "title": "Hulk Hogan (c) def. Kevin Nash \u2014 Retirement Match for the WCW World Heavyweight Championship"
+    }
+  ]
+}

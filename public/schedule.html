@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>WCW 2000 Tracker • Schedule</title>
+  <link rel="stylesheet" href="/css/styles.css"/>
+</head>
+<body>
+  
+<header class="site">
+  <div class="navwrap">
+    <div class="logo">
+      <span class="wcw">WCW</span> <span>2000 Tracker</span><br/>
+      <small>TEW 9 • Your booking, week-by-week</small>
+    </div>
+    <nav>
+      <a href="/index.html">Dashboard</a>
+      <a href="/roster.html">Roster</a>
+      <a href="/champions.html">Champions</a>
+      <a href="/teams.html">Tag Teams</a>
+      <a href="/factions.html">Factions</a>
+      <a href="/developmental.html">Developmental</a>
+      <a href="/schedule.html">Schedule</a>
+    </nav>
+    <div class="right"><button id="btnPrev" class="badge">←</button><label for="datePicker" class="badge">Week</label><input id="datePicker" type="date" min="2000-01-01" max="2000-12-31"/><button id="btnNext" class="badge">→</button></div>
+  </div>
+</header>
+
+  <main>
+    
+<section class="card">
+  <h1>Full 2000 Schedule</h1>
+  <div class="badge">Nitro & Thunder (A Shows, 120m) • Saturday Night (B Show, 60m) • PPV (180m)</div>
+  <h2 style="margin-top:14px">Pay-Per-Views</h2>
+  <table id="tblPPV"><thead><tr><th>Date</th><th>Event</th><th>Length</th></tr></thead><tbody></tbody></table>
+  <h2 style="margin-top:14px">Weekly TV</h2>
+  <table id="tblTV"><thead><tr><th>Date</th><th>Show</th><th>Length</th></tr></thead><tbody></tbody></table>
+</section>
+
+  </main>
+  <footer class="footer">Built for local use · WCW 2000 • Node/Express • No DB required</footer>
+  <script src="/js/app.js"></script>
+  
+<script>
+(async function(){
+  const sched = await fetchJSON("/api/schedule");
+  const ppv = sched.ppv.slice().sort((a,b)=>a.date.localeCompare(b.date));
+  const tv = [...sched.nitro, ...sched.thunder, ...sched.saturday_night].sort((a,b)=>a.date.localeCompare(b.date));
+
+  document.querySelector("#tblPPV tbody").innerHTML = ppv.map(p=>`<tr><td>${p.date}</td><td><a href="/show.html?date=${encodeURIComponent(p.date)}&show=${encodeURIComponent(p.show)}">${p.show}</a></td><td>${p.minutes} mins</td></tr>`).join("");
+
+  document.querySelector("#tblTV tbody").innerHTML = tv.map(s=>`<tr><td>${s.date}</td><td><a href="/show.html?date=${encodeURIComponent(s.date)}&show=${encodeURIComponent(s.show)}">${s.show}</a></td><td>${s.minutes} mins</td></tr>`).join("");
+})();
+</script>
+
+</body>
+</html>

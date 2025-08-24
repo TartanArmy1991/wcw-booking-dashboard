@@ -1,0 +1,50 @@
+{
+  "title": "WCW United States Championship",
+  "slug": "united-states",
+  "lineage": [
+    {
+      "champion": "Bret Hart",
+      "start": "1998-08-10"
+    },
+    {
+      "champion": "Lex Luger",
+      "start": "1998-10-26"
+    },
+    {
+      "champion": "Bret Hart",
+      "start": "1998-11-30"
+    },
+    {
+      "champion": "Roddy Piper",
+      "start": "1999-02-08"
+    },
+    {
+      "champion": "Scott Hall",
+      "start": "1999-03-08"
+    },
+    {
+      "champion": "Vacated",
+      "start": "1999-03-18"
+    },
+    {
+      "champion": "Scott Steiner",
+      "start": "1999-04-19"
+    },
+    {
+      "champion": "Bret Hart",
+      "start": "1999-10-25"
+    },
+    {
+      "champion": "Scott Hall",
+      "start": "1999-11-08"
+    },
+    {
+      "champion": "Chris Benoit",
+      "start": "1999-12-19"
+    },
+    {
+      "champion": "Jeff Jarrett",
+      "start": "1999-12-15"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>WCW 2000 • Title History Editor</title><link rel="stylesheet" href="/css/styles.css"/></head>
+<body>
+  <header class="site">
+    <div class="navwrap">
+      <div class="logo"><span class="wcw">WCW</span> <span>2000 Tracker</span><br/><small>Title History Editor</small></div>
+      <nav><a href="/champions.html">Back to Champions</a></nav>
+    </div>
+  </header>
+  <main>
+    <section class="card">
+      <h1>Import Title History (CSV)</h1>
+      <p class="badge">Format: <code>start,end,champion,notes</code>. One line per reign. Leave <em>end</em> blank if ongoing.</p>
+      <label>Title:
+        <select id="sel">
+          <option value="world-heavyweight">WCW World Heavyweight Championship</option>
+          <option value="united-states">WCW United States Championship</option>
+          <option value="world-tag-team">WCW World Tag Team Championship</option>
+          <option value="cruiserweight">WCW Cruiserweight Championship</option>
+          <option value="hardcore">WCW Hardcore Championship</option>
+          <option value="world-television">WCW World Television Championship</option>
+        </select>
+      </label>
+      <textarea id="ta" style="width:100%;height:220px;background:#0f0f19;color:#e9e9f2;border:1px solid rgba(255,255,255,.12);border-radius:8px;margin-top:10px"></textarea>
+      <div style="margin-top:10px;display:flex;gap:10px;align-items:center;">
+        <button id="btn" class="badge">Import & Save</button><span id="msg" class="badge">—</span>
+      </div>
+    </section>
+  </main>
+  <script>
+  async function run(){
+    const slug = document.getElementById('sel').value;
+    const lines = document.getElementById('ta').value.split(/\\r?\\n/).map(s=>s.trim()).filter(Boolean);
+    const lineage = lines.map(line=>{
+      const [start,end,champion,notes] = line.split(',').map(x=>x?.trim()||'');
+      return { start, end, champion, notes };
+    });
+    const titles = {
+      "world-heavyweight": "WCW World Heavyweight Championship",
+      "united-states": "WCW United States Championship",
+      "world-tag-team": "WCW World Tag Team Championship",
+      "cruiserweight": "WCW Cruiserweight Championship",
+      "hardcore": "WCW Hardcore Championship",
+      "world-television": "WCW World Television Championship"
+    };
+    const res = await fetch(`/api/title-history/${slug}`, {
+      method:"POST",
+      headers:{ "Content-Type":"application/json" },
+      body: JSON.stringify({ title: titles[slug], lineage })
+    });
+    const js = await res.json();
+    document.getElementById('msg').textContent = js.ok ? `Saved ${js.count} reigns for ${titles[slug]}.` : (js.error||"Error");
+  }
+  document.getElementById('btn').addEventListener('click', run);
+  </script>
+</body>
+</html>

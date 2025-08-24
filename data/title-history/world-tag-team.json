@@ -1,0 +1,14 @@
+{
+  "title": "WCW World Tag Team Championship",
+  "slug": "world-tag-team",
+  "lineage": [
+    {
+      "champion": "Kevin Nash & Scott Hall",
+      "start": "1999-12-13"
+    },
+    {
+      "champion": "Vacated",
+      "start": "1999-12-22"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "date": "1999-10-24",
+  "show": "Halloween Havoc",
+  "minutes": 180,
+  "brand": "PPV",
+  "notes": "",
+  "card": [
+    {
+      "order": 1,
+      "type": "Title Match",
+      "title": "Disco Inferno (c) def. Lash LeRoux \u2014 WCW Cruiserweight Championship"
+    },
+    {
+      "order": 2,
+      "type": "Title Match",
+      "title": "Harlem Heat def. Filthy Animals (Billy Kidman & Konnan) and The First Family (Brian Knobbs & Hugh Morrus) (w/ Jimmy Hart) \u2014 Street Fight for the vacant WCW World Tag Team Championship"
+    },
+    {
+      "order": 3,
+      "type": "Match",
+      "title": "Eddie Guerrero def. Perry Saturn by DQ"
+    },
+    {
+      "order": 4,
+      "type": "Match",
+      "title": "Brad Armstrong def. Berlyn (w/ The Wall)"
+    },
+    {
+      "order": 5,
+      "type": "Title Match",
+      "title": "Rick Steiner def. Chris Benoit (c) \u2014 WCW World Television Championship"
+    },
+    {
+      "order": 6,
+      "type": "Match",
+      "title": "The Total Package (Lex Luger) (w/ Elizabeth) def. Bret Hart"
+    },
+    {
+      "order": 7,
+      "type": "Title Match",
+      "title": "Sting (c) def. Hulk Hogan \u2014 WCW World Heavyweight Championship (angle; 3 seconds)"
+    },
+    {
+      "order": 8,
+      "type": "Title Match",
+      "title": "Goldberg def. Sid Vicious (c) by TKO \u2014 WCW United States Heavyweight Championship"
+    },
+    {
+      "order": 9,
+      "type": "Strap Match",
+      "title": "Diamond Dallas Page (w/ Kimberly) def. Ric Flair"
+    },
+    {
+      "order": 10,
+      "type": "Match",
+      "title": "Goldberg def. Sting"
+    }
+  ]
+}
