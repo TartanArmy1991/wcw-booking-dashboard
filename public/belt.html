@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>WCW 2000 Tracker • Title</title>
+  <link rel="stylesheet" href="/css/styles.css"/>
+</head>
+<body>
+  <header class="site">
+    <div class="navwrap">
+      <div class="logo">
+        <span class="wcw">WCW</span> <span>2000 Tracker</span><br/>
+        <small>TEW 9 • Title details</small>
+      </div>
+      <nav>
+        <a href="/index.html">Dashboard</a>
+        <a href="/roster.html">Roster</a>
+        <a href="/champions.html" class="active">Champions</a>
+        <a href="/teams.html">Tag Teams</a>
+        <a href="/factions.html">Factions</a>
+        <a href="/developmental.html">Developmental</a>
+        <a href="/schedule.html">Schedule</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="card" id="heroCard" style="display:flex;gap:16px;align-items:center;flex-wrap:wrap">
+      <img id="imgBelt" src="" alt="Belt" style="width:260px;height:auto;border-radius:12px;border:1px solid rgba(255,255,255,.15)"/>
+      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap" id="photos"></div>
+      <div>
+        <h1 id="hTitle" style="margin:0 0 6px 0">Title</h1>
+        <div class="badge" id="hMeta">—</div>
+      </div>
+    </section>
+
+    <section class="card" id="historySection">
+      <h2 style="margin-top:0">Previous Champions</h2>
+      <ul id="prevList" class="list"></ul>
+    </section>
+  </main>
+
+  <footer class="footer">WCW 2000 • Title</footer>
+  <script src="/js/app.js"></script>
+  <script>
+  
+const TITLE_BY_SLUG = {
+  "world-heavyweight": "WCW World Heavyweight Championship",
+  "united-states": "WCW United States Championship",
+  "world-tag-team": "WCW World Tag Team Championship",
+  "cruiserweight": "WCW Cruiserweight Championship",
+  "hardcore": "WCW Hardcore Championship",
+  "world-television": "WCW World Television Championship"
+};
+
+function nameToSlug(n){ return (n||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,''); }
+function splitNames(n){ if(!n) return []; let base=n.replace(/\(.*?\)/g,'').trim(); return base.split(/\s*&\s*|\s+and\s+|,\s*|\/\s*/i).map(s=>s.trim()).filter(Boolean); }
+
+(async function(){
+  try{
+    const url = new URL(location.href);
+    const slug = url.searchParams.get("slug") || "world-heavyweight";
+    const titleName = TITLE_BY_SLUG[slug] || "Unknown Title";
+    document.getElementById("hTitle").textContent = titleName;
+    const b=document.getElementById('imgBelt'); b.src=`/amp/belts/${slug}.jpg`; b.onerror=()=>{b.onerror=null; b.src=`/img/belts/${slug}.jpg`;};
+
+    async function tryLoad(){
+      const r1 = await fetch(`/data/title-history/${slug}.json`);
+      if (r1.ok) return r1.json();
+      const r2 = await fetch(`/api/title-history/${slug}`);
+      if (r2.ok) return r2.json();
+      return { lineage: [] };
+    }
+
+    const hist = await tryLoad();
+    const lineage = Array.isArray(hist.lineage) ? hist.lineage : [];
+    if (lineage.length === 0){
+      document.getElementById("hMeta").textContent = "No data found for this title.";
+      const sec = document.getElementById("historySection");
+      const diag = document.createElement("div");
+      diag.className = "small meta";
+      diag.textContent = `Missing: /data/title-history/${slug}.json or /api/title-history/${slug}`;
+      sec.appendChild(diag);
+      return;
+    }
+
+    lineage.sort((a,b)=> a.start>b.start ? -1 : 1); // newest first
+
+    const current = lineage[0];
+    document.getElementById("hMeta").textContent = current.start ? `${current.champion} — since ${current.start}` : current.champion;
+
+    const photos = document.getElementById('photos');
+    photos.innerHTML='';
+    const names = splitNames(current.champion);
+    if (names.length === 0) names.push(current.champion);
+    names.forEach(n => {
+      const img = document.createElement('img');
+      img.alt = n; img.title = n;
+      portraitUrlExact(n).then(u=>{ img.src = u || '/img/wrestlers/_placeholder.svg'; });
+      img.style.width='120px'; img.style.height='120px'; img.style.objectFit='cover';
+      img.style.borderRadius='12px'; img.style.border='1px solid rgba(255,255,255,.15)';
+      photos.appendChild(img);
+    });
+
+    const ul = document.getElementById('prevList');
+    const prev = lineage.slice(1);
+    ul.innerHTML = prev.map(r => `<li><strong>${r.champion}</strong> — ${r.start}${r.notes? ` <span class="small meta">• ${r.notes}</span>`:''}</li>`).join('')
+                || `<li class="small meta">No previous champions recorded yet.</li>`;
+  }catch(e){
+    document.getElementById("hMeta").textContent = "Load error.";
+    console.error(e);
+  }
+})();
+</script>
+</body>
+</html>

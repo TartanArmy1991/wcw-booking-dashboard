@@ -1,0 +1,538 @@
+{
+  "weekKey": "2000-01-03",
+  "notes": "Sample data to get you started. Duplicate this file to add new weeks.",
+  "titles": [
+    {
+      "name": "WCW World Heavyweight Championship",
+      "champion": "Bret Hart",
+      "since": "1999-12-08"
+    },
+    {
+      "name": "WCW United States Championship",
+      "champion": "Jeff Jarrett",
+      "since": "1999-12-15"
+    },
+    {
+      "name": "WCW World Tag Team Championship",
+      "champion": "Vacant",
+      "since": "1999-12-22"
+    },
+    {
+      "name": "WCW Cruiserweight Championship",
+      "champion": "Vacant",
+      "since": "2000-01-01"
+    },
+    {
+      "name": "WCW Hardcore Championship",
+      "champion": "Vacant",
+      "since": "2000-01-01"
+    },
+    {
+      "name": "WCW World Television Championship",
+      "champion": "Vacant",
+      "since": "1999-11-22"
+    }
+  ],
+  "roster": [
+    {
+      "name": "Bam Bam Bigelow",
+      "alignment": "",
+      "push": "",
+      "status": "active"
+    },
+    {
+      "name": "Billy Kidman",
+      "alignment": "",
+      "push": "",
+      "status": "active"
+    },
+    {
+      "name": "Booker T",
+      "alignment": "",
+      "push": "",
+      "status": "active"
+    },
+    {
+      "name": "Bret Hart",
+      "alignment": "",
+      "push": "",
+      "status": "active"
+    },
+    {
+      "name": "Buff Bagwell",
+      "alignment": "",
+      "push": "",
+      "status": "active"
+    },
+    {
+      "name": "Chavo Guerrero Jr.",
+      "alignment": "",
+      "push": "",
+      "status": "active"
+    },
+    {
+      "name": "Chris \"Champagne\" Kanyon",
+      "alignment": "",
+      "push": "",
+      "status": "active"
+    },
+    {
+      "name": "Chris Benoit",
+      "alignment": "",
+      "push": "",
+      "status": "active"
+    },
+    {
+      "name": "Dean Malenko",
+      "alignment": "",
+      "push": "",
+      "status": "active"
+    },
+    {
+      "name": "Diamond Dallas Page",
+      "alignment": "",
+      "push": "",
+      "status": "active"
+    },
+    {
+      "name": "Disco Inferno",
+      "alignment": "",
+      "push": "",
+      "status": "active"
+    },
+    {
+      "name": "Dustin Rhodes",
+      "alignment": "",
+      "push": "",
+      "status": "active"
+    },
+    {
+      "name": "Eddie Guerrero",
+      "alignment": "",
+      "push": "",
+      "status": "active"
+    },
+    {
+      "name": "Goldberg",
+      "alignment": "",
+      "push": "",
+      "status": "active"
+    },
+    {
+      "name": "Hulk Hogan",
+      "alignment": "",
+      "push": "",
+      "status": "active"
+    },
+    {
+      "name": "Jeff Jarrett",
+      "alignment": "",
+      "push": "",
+      "status": "active"
+    },
+    {
+      "name": "Juventud Guerrera",
+      "alignment": "",
+      "push": "",
+      "status": "active"
+    },
+    {
+      "name": "Kevin Nash",
+      "alignment": "",
+      "push": "",
+      "status": "active"
+    },
+    {
+      "name": "Konnan",
+      "alignment": "",
+      "push": "",
+      "status": "active"
+    },
+    {
+      "name": "La Parka",
+      "alignment": "",
+      "push": "",
+      "status": "active"
+    },
+    {
+      "name": "Meng",
+      "alignment": "",
+      "push": "",
+      "status": "active"
+    },
+    {
+      "name": "Mike Rotunda",
+      "alignment": "",
+      "push": "",
+      "status": "active"
+    },
+    {
+      "name": "Mr. Jones",
+      "alignment": "",
+      "push": "",
+      "status": "active"
+    },
+    {
+      "name": "Perry Saturn",
+      "alignment": "",
+      "push": "",
+      "status": "active"
+    },
+    {
+      "name": "Psychosis",
+      "alignment": "",
+      "push": "",
+      "status": "active"
+    },
+    {
+      "name": "Rey Mysterio Jr.",
+      "alignment": "",
+      "push": "",
+      "status": "active"
+    },
+    {
+      "name": "Ric Flair",
+      "alignment": "",
+      "push": "",
+      "status": "active"
+    },
+    {
+      "name": "Rick Steiner",
+      "alignment": "",
+      "push": "",
+      "status": "active"
+    },
+    {
+      "name": "Scott Hall",
+      "alignment": "",
+      "push": "",
+      "status": "active"
+    },
+    {
+      "name": "Scott Steiner",
+      "alignment": "",
+      "push": "",
+      "status": "active"
+    },
+    {
+      "name": "Shane Douglas",
+      "alignment": "",
+      "push": "",
+      "status": "active"
+    },
+    {
+      "name": "Sid Vicious",
+      "alignment": "",
+      "push": "",
+      "status": "active"
+    },
+    {
+      "name": "Sting",
+      "alignment": "",
+      "push": "",
+      "status": "active"
+    },
+    {
+      "name": "The Barbarian",
+      "alignment": "",
+      "push": "",
+      "status": "active"
+    },
+    {
+      "name": "The Cat",
+      "alignment": "",
+      "push": "",
+      "status": "active"
+    },
+    {
+      "name": "The Total Package",
+      "alignment": "",
+      "push": "",
+      "status": "active"
+    },
+    {
+      "name": "Vampiro",
+      "alignment": "",
+      "push": "",
+      "status": "active"
+    },
+    {
+      "name": "Eric Bischoff",
+      "alignment": "",
+      "push": "",
+      "status": "occasional"
+    },
+    {
+      "name": "Kevin Sullivan",
+      "alignment": "",
+      "push": "",
+      "status": "occasional"
+    },
+    {
+      "name": "Randy Savage",
+      "alignment": "",
+      "push": "",
+      "status": "occasional"
+    },
+    {
+      "name": "Roddy Piper",
+      "alignment": "",
+      "push": "",
+      "status": "occasional"
+    },
+    {
+      "name": "Stevie Ray",
+      "alignment": "",
+      "push": "",
+      "status": "occasional"
+    }
+  ],
+  "tagTeams": [
+    {
+      "name": "Harlem Heat",
+      "members": [
+        "Booker T",
+        "Stevie Ray"
+      ]
+    },
+    {
+      "name": "The Outsiders",
+      "members": [
+        "Kevin Nash",
+        "Scott Hall"
+      ]
+    },
+    {
+      "name": "The Filthy Animals",
+      "members": [
+        "Rey Mysterio Jr.",
+        "Konnan",
+        "Kidman",
+        "Disqo"
+      ]
+    }
+  ],
+  "factions": [
+    {
+      "name": "nWo 2000",
+      "members": [
+        "Bret Hart",
+        "Jeff Jarrett",
+        "Kevin Nash",
+        "Scott Steiner"
+      ]
+    },
+    {
+      "name": "The Revolution",
+      "members": [
+        "Shane Douglas",
+        "Dean Malenko",
+        "Perry Saturn",
+        "Asya"
+      ]
+    }
+  ],
+  "developmental": [
+    {
+      "name": "Adam Pearce"
+    },
+    {
+      "name": "AJ Styles"
+    },
+    {
+      "name": "Alexis Laree"
+    },
+    {
+      "name": "Amazing Red"
+    },
+    {
+      "name": "Berlyn"
+    },
+    {
+      "name": "Big T"
+    },
+    {
+      "name": "Big Vito"
+    },
+    {
+      "name": "Bobby Eaton"
+    },
+    {
+      "name": "Brian Adams"
+    },
+    {
+      "name": "Brian Kendrick"
+    },
+    {
+      "name": "Bryan Clark"
+    },
+    {
+      "name": "Buzzkill"
+    },
+    {
+      "name": "Carly Colon"
+    },
+    {
+      "name": "Chris Parks"
+    },
+    {
+      "name": "Corporal Cajun"
+    },
+    {
+      "name": "Crowbar"
+    },
+    {
+      "name": "Daffney"
+    },
+    {
+      "name": "Dave Prazak"
+    },
+    {
+      "name": "David Flair"
+    },
+    {
+      "name": "El Dandy"
+    },
+    {
+      "name": "Elix Skipper"
+    },
+    {
+      "name": "Elizabeth"
+    },
+    {
+      "name": "Evan Karagias"
+    },
+    {
+      "name": "Fit Finlay"
+    },
+    {
+      "name": "Frankie Kazarian"
+    },
+    {
+      "name": "Gerald"
+    },
+    {
+      "name": "Horace Hogan"
+    },
+    {
+      "name": "Hugh Morrus"
+    },
+    {
+      "name": "Jamie-San"
+    },
+    {
+      "name": "Jeremy Borash"
+    },
+    {
+      "name": "John Cena"
+    },
+    {
+      "name": "Johnny The Bull"
+    },
+    {
+      "name": "Jungle Jim"
+    },
+    {
+      "name": "Kaz Hayashi"
+    },
+    {
+      "name": "Kid Romeo"
+    },
+    {
+      "name": "Kimberly Page"
+    },
+    {
+      "name": "Kwee Wee"
+    },
+    {
+      "name": "Lenny Lane"
+    },
+    {
+      "name": "Lord Steven Regal"
+    },
+    {
+      "name": "Madusa"
+    },
+    {
+      "name": "Mark Jindrak"
+    },
+    {
+      "name": "Midnight"
+    },
+    {
+      "name": "Mike Sanders"
+    },
+    {
+      "name": "Miss Hancock"
+    },
+    {
+      "name": "Mona"
+    },
+    {
+      "name": "Monster Ripper"
+    },
+    {
+      "name": "Norman Smiley"
+    },
+    {
+      "name": "Paisley"
+    },
+    {
+      "name": "Patrick"
+    },
+    {
+      "name": "Reno"
+    },
+    {
+      "name": "Samoa Joe"
+    },
+    {
+      "name": "Scott Armstrong"
+    },
+    {
+      "name": "Scott Hudson"
+    },
+    {
+      "name": "Sgt. Buddy Lee Parke"
+    },
+    {
+      "name": "Shane Helms"
+    },
+    {
+      "name": "Shannon Moore"
+    },
+    {
+      "name": "Silver King"
+    },
+    {
+      "name": "Sonny Siaki"
+    },
+    {
+      "name": "Spice"
+    },
+    {
+      "name": "Steve Armstrong"
+    },
+    {
+      "name": "The Demon"
+    },
+    {
+      "name": "The Maestro"
+    },
+    {
+      "name": "The Wall"
+    },
+    {
+      "name": "Torrie Wilson"
+    },
+    {
+      "name": "Villano IV"
+    },
+    {
+      "name": "Villano V"
+    },
+    {
+      "name": "Yun Yang"
+    }
+  ]
+}

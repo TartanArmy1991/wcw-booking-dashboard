@@ -1,0 +1,49 @@
+{
+  "date": "1999-07-11",
+  "show": "Bash at the Beach",
+  "minutes": 180,
+  "brand": "PPV",
+  "notes": "",
+  "card": [
+    {
+      "order": 1,
+      "type": "Match",
+      "title": "Ernest Miller (w/ Sonny Onoo) def. Disco Inferno"
+    },
+    {
+      "order": 2,
+      "type": "Title Match",
+      "title": "Rick Steiner (c) def. Van Hammer \u2014 WCW World Television Championship"
+    },
+    {
+      "order": 3,
+      "type": "Title Match",
+      "title": "David Flair (c) (w/ Ric Flair, Samantha, Asya & Arn Anderson) def. Dean Malenko \u2014 WCW United States Heavyweight Championship"
+    },
+    {
+      "order": 4,
+      "type": "Elimination",
+      "title": "No Limit Soldiers (Konnan, Rey Mysterio Jr., Swoll & B.A.) def. West Texas Rednecks (Curt Hennig, Bobby Duncum Jr., Barry & Kendall Windham)"
+    },
+    {
+      "order": 5,
+      "type": "Special",
+      "title": "Fit Finlay won the Junkyard Invitational"
+    },
+    {
+      "order": 6,
+      "type": "Title Match",
+      "title": "Jersey Triad (DDP, Kanyon & Bam Bam Bigelow) (c) def. Chris Benoit & Perry Saturn \u2014 WCW World Tag Team Championship (Handicap)"
+    },
+    {
+      "order": 7,
+      "type": "Special",
+      "title": "Buff Bagwell (w/ Judy Bagwell) def. Roddy Piper (w/ Ric Flair) \u2014 Boxing (Mills Lane special referee)"
+    },
+    {
+      "order": 8,
+      "type": "Title Match",
+      "title": "Randy Savage & Sid Vicious def. Kevin Nash (c) & Sting \u2014 Tag match for the WCW World Heavyweight Championship (Savage pinned Nash to win title)"
+    }
+  ]
+}

@@ -1,0 +1,178 @@
+{
+  "title": "WCW World Heavyweight Championship",
+  "slug": "world-heavyweight",
+  "lineage": [
+    {
+      "champion": "Ric Flair",
+      "start": "1991-01-11"
+    },
+    {
+      "champion": "Vacated",
+      "start": "1991-07-01"
+    },
+    {
+      "champion": "Lex Luger",
+      "start": "1991-07-14"
+    },
+    {
+      "champion": "Sting",
+      "start": "1992-02-29"
+    },
+    {
+      "champion": "Big Van Vader",
+      "start": "1992-07-12"
+    },
+    {
+      "champion": "Ron Simmons",
+      "start": "1992-08-02"
+    },
+    {
+      "champion": "Big Van Vader",
+      "start": "1992-12-30"
+    },
+    {
+      "champion": "Sting",
+      "start": "1993-03-11"
+    },
+    {
+      "champion": "Big Van Vader",
+      "start": "1993-03-17"
+    },
+    {
+      "champion": "Ric Flair",
+      "start": "1993-12-27"
+    },
+    {
+      "champion": "Vacated",
+      "start": "1994-04-17"
+    },
+    {
+      "champion": "Ric Flair",
+      "start": "1994-04-21"
+    },
+    {
+      "champion": "Hulk Hogan",
+      "start": "1994-07-17"
+    },
+    {
+      "champion": "The Giant",
+      "start": "1995-10-29"
+    },
+    {
+      "champion": "Vacated",
+      "start": "1995-11-06"
+    },
+    {
+      "champion": "Randy Savage",
+      "start": "1995-11-26"
+    },
+    {
+      "champion": "Ric Flair",
+      "start": "1995-12-27"
+    },
+    {
+      "champion": "Randy Savage",
+      "start": "1996-01-22"
+    },
+    {
+      "champion": "Ric Flair",
+      "start": "1996-02-11"
+    },
+    {
+      "champion": "The Giant",
+      "start": "1996-04-22"
+    },
+    {
+      "champion": "Hollywood Hogan",
+      "start": "1996-08-10"
+    },
+    {
+      "champion": "Lex Luger",
+      "start": "1997-08-04"
+    },
+    {
+      "champion": "Hollywood Hogan",
+      "start": "1997-08-09"
+    },
+    {
+      "champion": "Sting",
+      "start": "1997-12-28"
+    },
+    {
+      "champion": "Vacated",
+      "start": "1998-01-08"
+    },
+    {
+      "champion": "Sting",
+      "start": "1998-02-22"
+    },
+    {
+      "champion": "Randy Savage",
+      "start": "1998-04-19"
+    },
+    {
+      "champion": "Hollywood Hogan",
+      "start": "1998-04-20"
+    },
+    {
+      "champion": "Goldberg",
+      "start": "1998-07-06"
+    },
+    {
+      "champion": "Kevin Nash",
+      "start": "1998-12-27"
+    },
+    {
+      "champion": "Hollywood Hogan",
+      "start": "1999-01-04"
+    },
+    {
+      "champion": "Ric Flair",
+      "start": "1999-03-14"
+    },
+    {
+      "champion": "Diamond Dallas Page",
+      "start": "1999-04-11"
+    },
+    {
+      "champion": "Sting",
+      "start": "1999-04-26"
+    },
+    {
+      "champion": "Diamond Dallas Page",
+      "start": "1999-04-26"
+    },
+    {
+      "champion": "Kevin Nash",
+      "start": "1999-05-09"
+    },
+    {
+      "champion": "Randy Savage",
+      "start": "1999-07-11"
+    },
+    {
+      "champion": "Hollywood Hogan",
+      "start": "1999-07-12"
+    },
+    {
+      "champion": "Sting",
+      "start": "1999-09-12"
+    },
+    {
+      "champion": "Vacated",
+      "start": "1999-10-25"
+    },
+    {
+      "champion": "Bret Hart",
+      "start": "1999-11-21"
+    },
+    {
+      "champion": "Vacated",
+      "start": "1999-12-20"
+    },
+    {
+      "champion": "Bret Hart",
+      "start": "1999-12-20"
+    }
+  ]
+}

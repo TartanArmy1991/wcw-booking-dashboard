@@ -1,0 +1,16 @@
+{
+  "name": "wcw-tew9-tracker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local network WCW 2000 booking tracker for TEW 9",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "generate:schedule": "node scripts/generateSchedule.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "cheerio": "^1.0.0-rc.12",
+    "node-fetch": "^3.3.2"
+  }
+}

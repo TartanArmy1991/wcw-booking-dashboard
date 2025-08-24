@@ -1,0 +1,74 @@
+{
+  "date": "1999-12-19",
+  "show": "Starrcade",
+  "minutes": 180,
+  "brand": "PPV",
+  "notes": "",
+  "card": [
+    {
+      "order": 1,
+      "type": "Match",
+      "title": "The Mamalukes (Big Vito & Johnny the Bull) (w/ Tony Marinara) def. Disco Inferno & Lash LeRoux"
+    },
+    {
+      "order": 2,
+      "type": "Title Match",
+      "title": "Madusa def. Evan Karagias (c) \u2014 WCW Cruiserweight Championship"
+    },
+    {
+      "order": 3,
+      "type": "Hardcore",
+      "title": "Norman Smiley (c) def. Meng \u2014 WCW Hardcore Championship"
+    },
+    {
+      "order": 4,
+      "type": "Eight-Man Tag",
+      "title": "The Revolution (Shane Douglas, Dean Malenko, Perry Saturn & Asya) def. Jim Duggan & The Varsity Club (Kevin Sullivan, Mike Rotunda & Rick Steiner)"
+    },
+    {
+      "order": 5,
+      "type": "DQ",
+      "title": "Vampiro def. Steve Williams via DQ"
+    },
+    {
+      "order": 6,
+      "type": "Match",
+      "title": "Vampiro def. Oklahoma"
+    },
+    {
+      "order": 7,
+      "type": "Six-Person Tag",
+      "title": "Creative Control (Gerald & Patrick) & Curt Hennig def. Harlem Heat (Booker T & Stevie Ray) & Midnight"
+    },
+    {
+      "order": 8,
+      "type": "Bunkhouse Brawl",
+      "title": "Jeff Jarrett def. Dustin Rhodes"
+    },
+    {
+      "order": 9,
+      "type": "Crowbar on a Pole",
+      "title": "Diamond Dallas Page def. David Flair"
+    },
+    {
+      "order": 10,
+      "type": "DQ",
+      "title": "Sting def. The Total Package (Lex Luger) via DQ"
+    },
+    {
+      "order": 11,
+      "type": "Powerbomb",
+      "title": "Kevin Nash def. Sid Vicious \u2014 Powerbomb match"
+    },
+    {
+      "order": 12,
+      "type": "Ladder (US Title)",
+      "title": "Chris Benoit (c) def. Jeff Jarrett \u2014 WCW United States Heavyweight Championship (Ladder Match)"
+    },
+    {
+      "order": 13,
+      "type": "No DQ (World Title)",
+      "title": "Bret Hart (c) def. Goldberg \u2014 WCW World Heavyweight Championship (No DQ)"
+    }
+  ]
+}

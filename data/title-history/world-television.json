@@ -1,0 +1,14 @@
+{
+  "title": "WCW World Television Championship",
+  "slug": "world-television",
+  "lineage": [
+    {
+      "champion": "Scott Hall",
+      "start": "1999-11-21"
+    },
+    {
+      "champion": "Vacated",
+      "start": "1999-11-22"
+    }
+  ]
+}

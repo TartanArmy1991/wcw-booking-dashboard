@@ -1,0 +1,905 @@
+{
+  "year": 2000,
+  "nitro": [
+    {
+      "date": "2000-01-03",
+      "show": "WCW Monday Nitro",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-01-10",
+      "show": "WCW Monday Nitro",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-01-17",
+      "show": "WCW Monday Nitro",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-01-24",
+      "show": "WCW Monday Nitro",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-01-31",
+      "show": "WCW Monday Nitro",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-02-07",
+      "show": "WCW Monday Nitro",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-02-14",
+      "show": "WCW Monday Nitro",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-02-21",
+      "show": "WCW Monday Nitro",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-02-28",
+      "show": "WCW Monday Nitro",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-03-06",
+      "show": "WCW Monday Nitro",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-03-13",
+      "show": "WCW Monday Nitro",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-03-20",
+      "show": "WCW Monday Nitro",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-03-27",
+      "show": "WCW Monday Nitro",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-04-03",
+      "show": "WCW Monday Nitro",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-04-10",
+      "show": "WCW Monday Nitro",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-04-17",
+      "show": "WCW Monday Nitro",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-04-24",
+      "show": "WCW Monday Nitro",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-05-01",
+      "show": "WCW Monday Nitro",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-05-08",
+      "show": "WCW Monday Nitro",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-05-15",
+      "show": "WCW Monday Nitro",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-05-22",
+      "show": "WCW Monday Nitro",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-05-29",
+      "show": "WCW Monday Nitro",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-06-05",
+      "show": "WCW Monday Nitro",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-06-12",
+      "show": "WCW Monday Nitro",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-06-19",
+      "show": "WCW Monday Nitro",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-06-26",
+      "show": "WCW Monday Nitro",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-07-03",
+      "show": "WCW Monday Nitro",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-07-10",
+      "show": "WCW Monday Nitro",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-07-17",
+      "show": "WCW Monday Nitro",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-07-24",
+      "show": "WCW Monday Nitro",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-07-31",
+      "show": "WCW Monday Nitro",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-08-07",
+      "show": "WCW Monday Nitro",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-08-14",
+      "show": "WCW Monday Nitro",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-08-21",
+      "show": "WCW Monday Nitro",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-08-28",
+      "show": "WCW Monday Nitro",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-09-04",
+      "show": "WCW Monday Nitro",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-09-11",
+      "show": "WCW Monday Nitro",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-09-18",
+      "show": "WCW Monday Nitro",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-09-25",
+      "show": "WCW Monday Nitro",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-10-02",
+      "show": "WCW Monday Nitro",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-10-09",
+      "show": "WCW Monday Nitro",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-10-16",
+      "show": "WCW Monday Nitro",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-10-23",
+      "show": "WCW Monday Nitro",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-10-30",
+      "show": "WCW Monday Nitro",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-11-06",
+      "show": "WCW Monday Nitro",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-11-13",
+      "show": "WCW Monday Nitro",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-11-20",
+      "show": "WCW Monday Nitro",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-11-27",
+      "show": "WCW Monday Nitro",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-12-04",
+      "show": "WCW Monday Nitro",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-12-11",
+      "show": "WCW Monday Nitro",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-12-18",
+      "show": "WCW Monday Nitro",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-12-25",
+      "show": "WCW Monday Nitro",
+      "brand": "A Show",
+      "minutes": 120
+    }
+  ],
+  "thunder": [
+    {
+      "date": "2000-01-06",
+      "show": "WCW Thunder",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-01-13",
+      "show": "WCW Thunder",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-01-20",
+      "show": "WCW Thunder",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-01-27",
+      "show": "WCW Thunder",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-02-03",
+      "show": "WCW Thunder",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-02-10",
+      "show": "WCW Thunder",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-02-17",
+      "show": "WCW Thunder",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-02-24",
+      "show": "WCW Thunder",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-03-02",
+      "show": "WCW Thunder",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-03-09",
+      "show": "WCW Thunder",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-03-16",
+      "show": "WCW Thunder",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-03-23",
+      "show": "WCW Thunder",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-03-30",
+      "show": "WCW Thunder",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-04-06",
+      "show": "WCW Thunder",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-04-13",
+      "show": "WCW Thunder",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-04-20",
+      "show": "WCW Thunder",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-04-27",
+      "show": "WCW Thunder",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-05-04",
+      "show": "WCW Thunder",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-05-11",
+      "show": "WCW Thunder",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-05-18",
+      "show": "WCW Thunder",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-05-25",
+      "show": "WCW Thunder",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-06-01",
+      "show": "WCW Thunder",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-06-08",
+      "show": "WCW Thunder",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-06-15",
+      "show": "WCW Thunder",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-06-22",
+      "show": "WCW Thunder",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-06-29",
+      "show": "WCW Thunder",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-07-06",
+      "show": "WCW Thunder",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-07-13",
+      "show": "WCW Thunder",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-07-20",
+      "show": "WCW Thunder",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-07-27",
+      "show": "WCW Thunder",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-08-03",
+      "show": "WCW Thunder",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-08-10",
+      "show": "WCW Thunder",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-08-17",
+      "show": "WCW Thunder",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-08-24",
+      "show": "WCW Thunder",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-08-31",
+      "show": "WCW Thunder",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-09-07",
+      "show": "WCW Thunder",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-09-14",
+      "show": "WCW Thunder",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-09-21",
+      "show": "WCW Thunder",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-09-28",
+      "show": "WCW Thunder",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-10-05",
+      "show": "WCW Thunder",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-10-12",
+      "show": "WCW Thunder",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-10-19",
+      "show": "WCW Thunder",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-10-26",
+      "show": "WCW Thunder",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-11-02",
+      "show": "WCW Thunder",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-11-09",
+      "show": "WCW Thunder",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-11-16",
+      "show": "WCW Thunder",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-11-23",
+      "show": "WCW Thunder",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-11-30",
+      "show": "WCW Thunder",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-12-07",
+      "show": "WCW Thunder",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-12-14",
+      "show": "WCW Thunder",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-12-21",
+      "show": "WCW Thunder",
+      "brand": "A Show",
+      "minutes": 120
+    },
+    {
+      "date": "2000-12-28",
+      "show": "WCW Thunder",
+      "brand": "A Show",
+      "minutes": 120
+    }
+  ],
+  "saturday_night": [
+    {
+      "date": "2000-01-08",
+      "show": "WCW Saturday Night",
+      "brand": "B Show",
+      "minutes": 60
+    },
+    {
+      "date": "2000-01-15",
+      "show": "WCW Saturday Night",
+      "brand": "B Show",
+      "minutes": 60
+    },
+    {
+      "date": "2000-01-22",
+      "show": "WCW Saturday Night",
+      "brand": "B Show",
+      "minutes": 60
+    },
+    {
+      "date": "2000-01-29",
+      "show": "WCW Saturday Night",
+      "brand": "B Show",
+      "minutes": 60
+    },
+    {
+      "date": "2000-02-05",
+      "show": "WCW Saturday Night",
+      "brand": "B Show",
+      "minutes": 60
+    },
+    {
+      "date": "2000-02-12",
+      "show": "WCW Saturday Night",
+      "brand": "B Show",
+      "minutes": 60
+    },
+    {
+      "date": "2000-02-19",
+      "show": "WCW Saturday Night",
+      "brand": "B Show",
+      "minutes": 60
+    },
+    {
+      "date": "2000-02-26",
+      "show": "WCW Saturday Night",
+      "brand": "B Show",
+      "minutes": 60
+    },
+    {
+      "date": "2000-03-04",
+      "show": "WCW Saturday Night",
+      "brand": "B Show",
+      "minutes": 60
+    },
+    {
+      "date": "2000-03-11",
+      "show": "WCW Saturday Night",
+      "brand": "B Show",
+      "minutes": 60
+    },
+    {
+      "date": "2000-03-18",
+      "show": "WCW Saturday Night",
+      "brand": "B Show",
+      "minutes": 60
+    },
+    {
+      "date": "2000-03-25",
+      "show": "WCW Saturday Night",
+      "brand": "B Show",
+      "minutes": 60
+    },
+    {
+      "date": "2000-04-01",
+      "show": "WCW Saturday Night",
+      "brand": "B Show",
+      "minutes": 60
+    },
+    {
+      "date": "2000-04-08",
+      "show": "WCW Saturday Night",
+      "brand": "B Show",
+      "minutes": 60
+    },
+    {
+      "date": "2000-04-15",
+      "show": "WCW Saturday Night",
+      "brand": "B Show",
+      "minutes": 60
+    },
+    {
+      "date": "2000-04-22",
+      "show": "WCW Saturday Night",
+      "brand": "B Show",
+      "minutes": 60
+    },
+    {
+      "date": "2000-04-29",
+      "show": "WCW Saturday Night",
+      "brand": "B Show",
+      "minutes": 60
+    },
+    {
+      "date": "2000-05-06",
+      "show": "WCW Saturday Night",
+      "brand": "B Show",
+      "minutes": 60
+    },
+    {
+      "date": "2000-05-13",
+      "show": "WCW Saturday Night",
+      "brand": "B Show",
+      "minutes": 60
+    },
+    {
+      "date": "2000-05-20",
+      "show": "WCW Saturday Night",
+      "brand": "B Show",
+      "minutes": 60
+    },
+    {
+      "date": "2000-05-27",
+      "show": "WCW Saturday Night",
+      "brand": "B Show",
+      "minutes": 60
+    },
+    {
+      "date": "2000-06-03",
+      "show": "WCW Saturday Night",
+      "brand": "B Show",
+      "minutes": 60
+    },
+    {
+      "date": "2000-06-10",
+      "show": "WCW Saturday Night",
+      "brand": "B Show",
+      "minutes": 60
+    },
+    {
+      "date": "2000-06-17",
+      "show": "WCW Saturday Night",
+      "brand": "B Show",
+      "minutes": 60
+    },
+    {
+      "date": "2000-06-24",
+      "show": "WCW Saturday Night",
+      "brand": "B Show",
+      "minutes": 60
+    },
+    {
+      "date": "2000-07-01",
+      "show": "WCW Saturday Night",
+      "brand": "B Show",
+      "minutes": 60
+    },
+    {
+      "date": "2000-07-08",
+      "show": "WCW Saturday Night",
+      "brand": "B Show",
+      "minutes": 60
+    },
+    {
+      "date": "2000-07-15",
+      "show": "WCW Saturday Night",
+      "brand": "B Show",
+      "minutes": 60
+    },
+    {
+      "date": "2000-07-22",
+      "show": "WCW Saturday Night",
+      "brand": "B Show",
+      "minutes": 60
+    },
+    {
+      "date": "2000-07-29",
+      "show": "WCW Saturday Night",
+      "brand": "B Show",
+      "minutes": 60
+    },
+    {
+      "date": "2000-08-05",
+      "show": "WCW Saturday Night",
+      "brand": "B Show",
+      "minutes": 60
+    },
+    {
+      "date": "2000-08-12",
+      "show": "WCW Saturday Night",
+      "brand": "B Show",
+      "minutes": 60
+    },
+    {
+      "date": "2000-08-19",
+      "show": "WCW Saturday Night",
+      "brand": "B Show",
+      "minutes": 60
+    }
+  ],
+  "ppv": [
+    {
+      "date": "2000-01-16",
+      "show": "Souled Out 2000",
+      "brand": "PPV",
+      "minutes": 180
+    },
+    {
+      "date": "2000-02-20",
+      "show": "SuperBrawl 2000",
+      "brand": "PPV",
+      "minutes": 180
+    },
+    {
+      "date": "2000-03-19",
+      "show": "Uncensored 2000",
+      "brand": "PPV",
+      "minutes": 180
+    },
+    {
+      "date": "2000-04-16",
+      "show": "Spring Stampede 2000",
+      "brand": "PPV",
+      "minutes": 180
+    },
+    {
+      "date": "2000-05-07",
+      "show": "Slamboree 2000",
+      "brand": "PPV",
+      "minutes": 180
+    },
+    {
+      "date": "2000-06-11",
+      "show": "The Great American Bash 2000",
+      "brand": "PPV",
+      "minutes": 180
+    },
+    {
+      "date": "2000-07-09",
+      "show": "Bash at the Beach 2000",
+      "brand": "PPV",
+      "minutes": 180
+    },
+    {
+      "date": "2000-08-13",
+      "show": "New Blood Rising 2000",
+      "brand": "PPV",
+      "minutes": 180
+    },
+    {
+      "date": "2000-09-17",
+      "show": "Fall Brawl 2000",
+      "brand": "PPV",
+      "minutes": 180
+    },
+    {
+      "date": "2000-10-29",
+      "show": "Halloween Havoc 2000",
+      "brand": "PPV",
+      "minutes": 180
+    },
+    {
+      "date": "2000-11-26",
+      "show": "Mayhem 2000",
+      "brand": "PPV",
+      "minutes": 180
+    },
+    {
+      "date": "2000-12-17",
+      "show": "Starrcade 2000",
+      "brand": "PPV",
+      "minutes": 180
+    }
+  ]
+}

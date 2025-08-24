@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>WCW 2000 Tracker • Tag Teams</title>
+  <link rel="stylesheet" href="/css/styles.css"/>
+</head>
+<body>
+  
+<header class="site">
+  <div class="navwrap">
+    <div class="logo">
+      <span class="wcw">WCW</span> <span>2000 Tracker</span><br/>
+      <small>TEW 9 • Your booking, week-by-week</small>
+    </div>
+    <nav>
+      <a href="/index.html">Dashboard</a>
+      <a href="/roster.html">Roster</a>
+      <a href="/champions.html">Champions</a>
+      <a href="/teams.html">Tag Teams</a>
+      <a href="/factions.html">Factions</a>
+      <a href="/developmental.html">Developmental</a>
+      <a href="/schedule.html">Schedule</a>
+    </nav>
+    <div class="right"><button id="btnPrev" class="badge">←</button><label for="datePicker" class="badge">Week</label><input id="datePicker" type="date" min="2000-01-01" max="2000-12-31"/><button id="btnNext" class="badge">→</button></div>
+  </div>
+</header>
+
+  <main>
+    
+<section class="card">
+  <h1>Tag Teams</h1>
+  <table id="tblTeams"><thead><tr><th>Team</th><th>Members</th></tr></thead><tbody></tbody></table>
+</section>
+
+  </main>
+  <footer class="footer">Built for local use · WCW 2000 • Node/Express • No DB required</footer>
+  <script src="/js/app.js"></script>
+  
+<script>
+(async function(){
+  const { snap } = await loadWeekSnapshot();
+  const tb = document.querySelector("#tblTeams tbody");
+  tb.innerHTML = (snap.tagTeams||[]).map(t=>`<tr><td>${t.name}</td><td>${(t.members||[]).join(", ")}</td></tr>`).join("")
+    || `<tr><td colspan="2">No tag teams entered.</td></tr>`;
+})();
+</script>
+
+</body>
+</html>

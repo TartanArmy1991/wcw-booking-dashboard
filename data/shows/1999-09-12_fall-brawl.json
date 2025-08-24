@@ -1,0 +1,54 @@
+{
+  "date": "1999-09-12",
+  "show": "Fall Brawl",
+  "minutes": 180,
+  "brand": "PPV",
+  "notes": "",
+  "card": [
+    {
+      "order": 1,
+      "type": "Six-Man Tag",
+      "title": "Filthy Animals (Rey Mysterio Jr., Eddie Guerrero & Billy Kidman) def. Vampiro & Insane Clown Posse (Violent J & Shaggy 2 Dope)"
+    },
+    {
+      "order": 2,
+      "type": "Title Match",
+      "title": "Lenny Lane (c) (w/ Lodi) def. Kaz Hayashi \u2014 WCW Cruiserweight Championship"
+    },
+    {
+      "order": 3,
+      "type": "No DQ",
+      "title": "The First Family (Hugh Morrus & Brian Knobbs) (w/ Jimmy Hart) def. The Revolution (Dean Malenko & Shane Douglas)"
+    },
+    {
+      "order": 4,
+      "type": "Title Match",
+      "title": "Rick Steiner (c) def. Perry Saturn \u2014 WCW World Television Championship"
+    },
+    {
+      "order": 5,
+      "type": "Match",
+      "title": "Berlyn (w/ The Wall) def. Jim Duggan"
+    },
+    {
+      "order": 6,
+      "type": "Title Match",
+      "title": "Harlem Heat (Booker T & Stevie Ray) def. West Texas Rednecks (Barry & Kendall Windham) (c) (w/ Curt Hennig) \u2014 WCW World Tag Team Championship"
+    },
+    {
+      "order": 7,
+      "type": "Title Match",
+      "title": "Sid Vicious def. Chris Benoit (c) \u2014 WCW United States Heavyweight Championship"
+    },
+    {
+      "order": 8,
+      "type": "Match",
+      "title": "Goldberg def. Diamond Dallas Page"
+    },
+    {
+      "order": 9,
+      "type": "Title Match",
+      "title": "Sting def. Hulk Hogan (c) \u2014 WCW World Heavyweight Championship"
+    }
+  ]
+}
